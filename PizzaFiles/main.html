@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: rgb(27,17,22);
+            width: 100vw;
+            height: 100vh;
+            background-image: url(sources/Batumi.png);
+            background-size: 104% 104%;
+            background-repeat: no-repeat;
+            background-position: -10px -10px;
+
+        }
+        .Shatili{
+            color: #CD853F;
+            z-index: 100 !important;
+            font-size: calc(3px + 4vw);
+            position: absolute;
+            left: 23.5%;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            text-shadow: 2px 2px 2px black;;
+        }
+        
+        
+        .earthimage{
+            background-color: blueviolet;
+            z-index: 100;
+            width: 460px;
+            height: 460px;
+            border-radius: 50%;
+            position: absolute;
+            left: 73px;
+            top: 280px;
+            background-image: url(sources/earth.png);
+            background-size: 120% 132%;
+            background-position: center;
+            animation: animateEarth 25s linear infinite;
+        }
+        @keyframes animateEarth{
+            0%{
+                transform: rotate(360deg);
+            }
+            100%{
+                transform: rotate(0deg);
+            }
+        }
+
+        .text{
+            position: absolute;
+            top: 210px;
+            width: 590px;
+            height: 590px;
+            border-radius: 50%;
+            /*background-color: #ccc;*/
+            animation: animateText 12.5s linear infinite;
+            z-index: 110;
+        }
+        @keyframes animateText{
+            0%{
+                transform: rotate(0deg);
+            }
+            100%{
+                transform: rotate(360deg);
+            }
+        }
+
+        .text b {
+            position: absolute;
+            display: block;
+            left: 50%;
+            transform-origin: 0 270px;
+            font-size: 2.8em;
+            color: bisque;
+            padding: 7px;
+            z-index: 110;
+            text-shadow: 2px 2px 2px black;
+        }
+        
+        .russian{
+            background-image: url(sources/russian.png);
+            background-size: 101% 102%;
+            border-radius: 10px;
+            width: 3vw;
+            height: 4vh;
+            position: absolute;
+            top: 59px;
+            right: 2vw;
+            background-color: aquamarine;
+        }
+
+        .english{
+            background-image: url(sources/english.png);
+            background-size: 101% 102%;
+            border-radius: 10px;
+            width: 3vw;
+            height: 4vh;
+            position: absolute;
+            top: 59px;
+            right: 7vw;
+            background-color: aquamarine;
+        }
+
+        .georgian{
+            background-image: url(sources/georgian.png);
+            background-size: 101% 102%;
+            border-radius: 10px;
+            width: 3vw;
+            height: 4vh;
+            position: absolute;
+            top: 59px;
+            right: 12vw;
+            background-color: aquamarine;
+        }
+
+        .divforbuttons{
+            position: absolute;
+            background-color:chartreuse;
+            box-shadow: 2px 2px 2px black;
+            border: 2px solid black;
+            width: 17vw;
+            height: 39vh;
+            border-radius: 10px;
+            left: 76%;
+            top: 39%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-flow: column wrap;
+        }
+
+        .infobutton{
+            padding: 15px;
+            background-color: none;
+            border-radius: 10px;
+            margin: 10px;
+            border: 2px solid #CD853F;
+        }
+        
+        .rombfornamebutton{
+            transform: scaleX(0);
+            background-color: bisque;
+            width: 20px;
+            height: 20px;
+            left: -5px;
+            top: 10px;
+            position: absolute;
+            transition: all .3s ease;
+            transform-origin: center left;
+        }
+
+        .namebutton{
+            transform: scaleX(0);
+            text-decoration: none  !important;
+            background-color: bisque;
+            width: 100px;
+            height: 50px;
+            border-radius: 10px;
+            left: 77px;
+            top: -13px;
+            position: relative;
+            transition: all .3s ease;
+            transform-origin: center left;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 2px 2px 2px black;
+            color:blanchedalmond;
+            text-shadow: 2px 2px 2px black;
+        }
+        
+        .info{
+            background-image: url(sources/free-icon-information-906794.png);
+            background-size: 75% 100%;
+            background-position: center;
+            background-repeat: no-repeat;
+            width: 35px;
+            height: 21px;
+            transition: all .3s ease;
+            text-decoration: none;
+        }
+        .info:hover > .namebutton{
+            transform: scaleX(1);
+        }
+        .info:hover   .rombfornamebutton{
+            transform: rotate(45deg);
+        }
+
+        .menu{
+            background-image: url(sources/free-icon-menu-1046849.png);
+            background-size: 75% 100%;
+            background-position: center;
+            background-repeat: no-repeat;
+            width: 35px;
+            height: 21px;
+            text-decoration: none;
+        }
+
+        .menu:hover > .namebutton{
+            transform: scaleX(1);
+        }
+        .menu:hover   .rombfornamebutton{
+            transform: rotate(45deg);
+        }
+        
+        .order{
+            background-image: url(sources/free-icon-delivery-bag-2178401.png);
+            background-size: 75% 100%;
+            background-position: center;
+            background-repeat: no-repeat;
+            width: 35px;
+            height: 21px;
+            text-decoration: none;
+        }
+
+        .order:hover > .namebutton{
+            transform: scaleX(1);
+        }
+        .order:hover   .rombfornamebutton{
+            transform: rotate(45deg);
+        }
+        
+        .textbutton{
+            text-align: center;
+            text-decoration: none;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+        }
+
+    </style>
+</head>
+<body>
+    <header>
+        <div class = "loader">
+            <div class = "text">
+                <p>Shatili</p>
+            </div>
+            <div class = "earthimage">
+
+            </div>
+            
+        </div>
+        <a class = "russian" href="index.html"></a>
+        <a class = "english" href="eng-index.html"></a>
+        <a class = "georgian" href="geo-index.html"></a>
+    </header>
+    <main>
+        <div class="divforbuttons">
+            <a href="index.html" class="infobutton menu">
+                <div class="namebutton">
+                    <h3 class = "textbutton">Меню</h3>
+                    <div class="rombfornamebutton"></div>
+                </div>
+            </a>
+            <a href="OrderPage.html" class="infobutton order">
+                <div class="namebutton">
+                    <h3 class = "textbutton">Заказать</h3>
+                    <div class="rombfornamebutton"></div>
+                </div>
+            </a>
+            <a href="info.html" class="infobutton info">
+                <div class="namebutton">
+                    <h3 class = "textbutton">О нас</h3>
+                    <div class="rombfornamebutton"></div>
+                </div>
+            </a>
+        </div>
+        <h1 class = "Shatili">Restaurant Shatili</h1>
+    </main>
+    <script>
+        let text = document.querySelector('.text p');
+        text.innerHTML = text.innerText.split("").map((char, i) => `<b style="transform:rotate(${i * 14}deg)">${char}</b>`).join("");
+    </script>
+</body>
+</html>

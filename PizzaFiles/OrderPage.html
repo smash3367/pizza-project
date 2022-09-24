@@ -1,0 +1,1168 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="description" content="На этом сайте вы можете почитать статьи про пиццу либо заказть её (нет)">
+    <meta charset="UTF-8">
+    <meta name="author" content="Лев">
+    <meta name="copyright" content="Лев">
+    <title>Пицца</title>
+    <style>
+        @import url(https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap);
+        body{
+            display: block;
+            min-height: 100vh;
+            background-image: url("../WhiteThemeFon.jpeg");
+            background-repeat: repeat;
+            background-attachment: fixed;
+            background-size: 100% 100%;
+        }
+        main{
+            font-family: 'Open Sans',sans-serif;
+        }
+
+        pre{
+            font-family: 'Open Sans',sans-serif;
+            font-size: 13px;
+        }
+
+
+        .firststepdiv{
+            background-color: #F1D4D1;
+            width: 880px;
+            height: 1000px;
+            position: absolute;
+            left: 285px;
+            top: 100px;
+            border-radius: 40px;
+            border: 3px solid #baacac;
+            display: inline-block;
+            transition: all linear .9s;
+        }
+
+        .secondstepdiv{
+            transform: translateX(1300px);
+            background-color: #F1D4D1;
+            width: 880px;
+            height: 1100px;
+            position: absolute;
+            left: 285px;
+            top: 100px;
+            border-radius: 40px;
+            border: 3px solid #baacac;
+            display: inline-block;
+            transition: all linear .9s;
+        }
+
+        .thirdstepdiv{
+            transform: translateX(1300px);
+            background-color: #F1D4D1;
+            width: 880px;
+            height: 850px;
+            position: absolute;
+            left: 285px;
+            top: 100px;
+            border-radius: 40px;
+            border: 3px solid #baacac;
+            display: inline-block;
+            transition: all linear .9s;
+        }
+
+        .Name{
+            top: 10px;
+            font-size: 25px;
+            left: 400px;
+            display: flex;
+            justify-content: center;
+            color: rgb(45, 45, 45)
+        }
+
+        header{
+            background-color: rgb(30, 30, 30);
+            position: fixed;
+            top: 0px;
+            left: 283px;
+            width: 890px;
+            margin: 0 0 0 0;
+            border-radius: 5px;
+            position: fixed;
+            z-index: 1001;
+            color: white;
+        }
+        .selected{
+            display: flex;
+            justify-content: center;
+        }
+        .name{
+            position: fixed;
+            top: 3px;
+            left: 350px;
+        }
+
+        footer{
+            background-color: rgb(30, 30, 30);
+            width: 905px;
+            height: 400px;
+            top: 1300px;
+            left: 275px;
+            position: absolute;
+            border: 2px solid rgb(70, 70, 70);
+            border-radius: 5px;
+        }
+
+        footer > h1{
+            color: rgb(230, 230, 230);
+            position: absolute;
+            top: 150px;
+            left: 397px;
+            font-size: 40px;
+        }
+
+
+        /* footer text */
+        .year{
+            position: absolute;
+            top: 333px;
+            left: 20px;
+            color: rgb(230, 230, 230)
+        }
+
+        .privet{
+            position: absolute;
+            top: 333px;
+            right: 57px;
+            color: rgb(230, 230, 230);
+        }
+
+        .pon{
+            position: absolute;
+            top: 333px;
+            right: 20px;
+            color: rgb(230, 230, 230);
+        }
+
+        /* [ footer text ] upper */
+        
+        /* a buttons (header) */
+        /* settings button */
+        .settings{
+            font-size: 8px;
+            position:absolute;
+            left: 13px;
+            top: 13px;
+            color: white;
+            font-weight: bold;
+            
+            text-align: center;
+            background-color: rgba(200, 200, 200, 0);
+            background-size: 100% 1em;
+            cursor: pointer;
+            border-radius: 100px;
+            height: 50px;
+            width: 50px;
+            box-shadow: 0px 0px 0px 0px rgba(200, 200, 200, 0);
+            transition: box-shadow 1s linear;
+            margin: 0.5em;
+        }
+
+        .settings:active{
+            box-shadow: 0px 0px 0px 3px rgba(170, 170, 170, 0.5);
+            background-color: rgba(170, 170, 170, 0.5);
+            transition:
+                background-color 0.01s,
+                box-shadow 0.1s linear;
+        }
+
+        .settings:hover,
+        .SettingsText:hover{
+            cursor: pointer;
+        }
+
+        .SettingsText{
+            position: absolute;
+            left: 13px;
+        }
+        /* [ settings button ] upper */
+
+        /* settings button animate */
+
+        .settings-content {
+            display: block;
+            position: absolute;
+            background-color: rgb(30, 30, 30);
+            min-width: 887px;
+            height: 300px;
+            left: -17px;
+            top: 55px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 100000;
+            border-radius: 10px;
+            line-height: 33px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-flow: column wrap-reverse;
+            border: 2px solid rgb(51, 48, 48);
+            transition: all .3s ease-in;
+        }
+
+        .settings-content .OtherA {
+            float: none;
+            color: #3366ff;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            text-align: left;
+            font-size: 15px;
+            transition: all;
+            background-color: #292929;
+            border-radius: 10px;
+            border: 2px solid rgb(185, 185, 185);
+            margin: 0 0 10px 0;
+            transition: all 1s;
+        }
+
+        .settings-content .MobileA {
+            float: none;
+            color: #3366ff;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            text-align: left;
+            font-size: 15px;
+            transition: all;
+            background-color: #292929;
+            border-radius: 10px;
+            border: 2px solid rgb(185, 185, 185);
+            margin: 0 0 10px 0;
+            transition: all 1s;
+        }
+
+        .settings-content a:hover {
+            color: #9e4446;
+            background-color: #ddd;
+            border: 2px solid #9e4446;
+            border-radius: 10px;
+            transition: all 1s;
+        }
+
+        .show {
+            display: block;
+        }
+        .SettingsText{
+        position: absolute;
+        left: 6px;
+        top: 6px;
+        font-size: 8px;
+        background-color: rgba(0,0,0,0);
+        color: white;
+        border: 0;
+        }
+
+        .SettingsAnimEnd{
+            transform: translateY(1px);
+            z-index: 0;
+            transition: all .25s ease-in;
+            
+        }
+
+        .SettingsAnimStart{
+            transform: translateY(-500px);
+            transition: all .25s ease-in;
+        }
+
+        .SettingsLeftAnimStart{
+            animation: SettingsLeftAnimKeyframeStart .5s ease-in;
+            animation-fill-mode: forwards;
+        }
+
+        .SettingsLeftAnimEnd{
+            animation: SettingsLeftAnimKeyframeEnd .5s ease-in;
+            animation-fill-mode: forwards;
+        }
+        @keyframes SettingsLeftAnimKeyframeStart {
+            0%{
+                transform: rotate(0deg);
+            }
+            50%{
+                transform: rotate(90deg);
+                left: 8px;
+                top: 8px;
+            }
+            55%{
+                transform: rotate(95deg);
+                left: 8px;
+                top: 8px;
+            }
+            60%{
+                transform: rotate(90deg);
+                left: 8px;
+                top: 8px;
+            }
+            100%{
+                transform: rotate(90deg);
+                left: 8px;
+                top: 8px;
+            }
+        }
+
+        @keyframes SettingsLeftAnimKeyframeEnd{
+            0%{
+                transform: rotate(90deg);
+                left: 8px;
+                top: 8px;
+            }
+            40%{
+                transform: rotate(0deg);
+                left: 6px;
+                top: 6px;
+            }
+            55%{
+                transform: rotate(-5deg);
+            }
+            60%{
+                transform: rotate(0deg);
+            }
+            100%{
+                transform: rotate(0deg);
+            }
+        }
+        /* [ settings button animate ] upper */
+        .Statia{
+            right: 280px;
+            top: 30px;
+            position: fixed;
+            color: white;
+            font-size: 20px;
+            text-decoration: None;
+            background: 
+                linear-gradient(to right, rgba(100, 200, 200, 1), rgba(100, 200, 200, 1)),
+                linear-gradient(to right, rgba(255, 0, 0, 1), rgba(255, 0, 180, 1), rgba(0, 100, 200, 1));
+            background-size: 100% 0.1em, 0 0.1em;
+            background-position: 100% 100%, 0 100%;
+            background-repeat: no-repeat;
+            transition: background-size 1000ms;
+        }
+
+        .Statia:hover,
+        .Statia:focus{
+            background-size: 0 0.1em, 100% 0.1em;
+        }
+
+        .Zakaz{
+            right: 430px;
+            top: 30px;
+            position: fixed;
+            color: white;
+            font-size: 20px;
+            text-decoration: None;
+            background:
+                linear-gradient(to right, rgba(100, 200, 200, 1), rgba(100, 200, 200, 1)),
+                linear-gradient(to right, rgba(100, 200, 200, 1), rgba(100, 200, 200, 1)),
+                linear-gradient(to right, rgba(255, 0, 0, 1), rgba(255, 0, 180, 1), rgba(0, 100, 200, 1));
+            background-size: 50% 0.1em, 50% 0.1em, 0 0.1em;
+            background-position: 100% 100%, 0 100%, 50% 100%;
+            background-repeat: no-repeat;
+            transition: background-size 1000ms;
+        }
+        .Zakaz:hover,
+        .Zakaz:focus{
+            background-size: 0 0.1em, 0 0.1em, 100% 0.1em;
+        }
+        /* [a buttons (header)] upper */
+        .h2{
+            position: absolute;
+            left: 70px;
+            top: 50px;
+        }
+        .h1{
+            position: absolute;
+            top: 550px;
+            left: 70px;
+        }
+        .line{
+            width: 800px;
+            border: 1px solid black;
+            position: absolute;
+            top: 95px;
+            left: 40px;
+        }
+        .line1{
+            width: 800px;
+            border: 1px solid black;
+            position: absolute;
+            top: 595px;
+            left: 40px;
+        }
+        .aboab{
+            position: absolute;
+            top: 620px;
+            left: 10px;
+        }
+        .aboba{
+            position: absolute;
+            top: 120px;
+            left: 10px;
+        }
+        /*  Step 1  */
+        .FirstStepCircle{
+            clip-path: circle(10%);
+            z-index: 999;
+            width: 100px;
+            position: absolute;
+            top: 140px;
+            left: 400px;
+            background-color:rgb(98, 97, 97);
+            color:rgb(191, 188, 188);
+        }
+
+        .SecondStepCircle{
+            clip-path: circle(10%);
+            z-index: 999;
+            width: 100px;
+            position: absolute;
+            top: 140px;
+            left: 380px;
+            background-color:rgb(98, 97, 97);
+            color:rgb(191, 188, 188);
+        }
+
+        .StepCirclesChoised{
+            clip-path: circle(10%);
+            z-index: 999;
+            width: 100px;
+            position: absolute;
+            top: 140px;
+            left: 360px;
+            background-color:rgb(59, 59, 59);
+            color:rgb(191, 188, 188);
+        }
+
+        .StepText{
+            position: absolute;
+            left: 398px;
+            top: 80px;
+        }
+        /*  Step 1 upper */
+
+        /*  Step 2  */
+        .FirstStep2Circle{
+            clip-path: circle(10%);
+            z-index: 999;
+            width: 100px;
+            position: absolute;
+            top: 140px;
+            left: 360px;
+            background-color:rgb(98, 97, 97);
+            color:rgb(191, 188, 188);
+        }
+
+        .SecondStep2Circle{
+            clip-path: circle(10%);
+            z-index: 999;
+            width: 100px;
+            position: absolute;
+            top: 140px;
+            left: 400px;
+            background-color:rgb(98, 97, 97);
+            color:rgb(191, 188, 188);
+        }
+
+        .Step2CirclesChoised{
+            clip-path: circle(10%);
+            z-index: 999;
+            width: 100px;
+            position: absolute;
+            top: 140px;
+            left: 380px;
+            background-color:rgb(59, 59, 59);
+            color:rgb(191, 188, 188);
+        }
+
+        .StepText{
+            position: absolute;
+            left: 398px;
+            top: 80px;
+        }
+
+        /*  Step 2 upper */
+        .DivNext{
+            width: 130px;
+            height: 50px;
+            background-color:rgba(0, 100, 200, 1);
+            border: 2px solid rgb(255, 255, 255);
+            position: absolute;
+            /*left: 494px;*/
+            left: 675px;
+            top: 105px;
+            color: rgb(232, 231, 231);
+            border-radius: 5px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            transition: all 1s;
+        }
+        
+        .DivNext:hover{
+            cursor: pointer;
+            background-color:rgb(230, 230, 230);
+            border: 2px solid rgba(0, 100, 200, 1);
+            color: rgba(0, 100, 200, 1);
+        }
+
+        .DivPrevious{
+            width: 130px;
+            height: 50px;
+            background-color:rgba(0, 100, 200, 1);
+            border: 2px solid rgb(255, 255, 255);
+            position: absolute;
+            /*left: 240px;*/
+            left: 85px;
+            top: 105px;
+            color: rgb(232, 231, 231);
+            border-radius: 5px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            transition: all 1s;
+        }
+
+        .DivPrevious:hover{
+            cursor: pointer;
+            background-color:rgb(230, 230, 230);
+            border: 2px solid rgba(0, 100, 200, 1);
+            color: rgba(0, 100, 200, 1);
+        }
+
+        .circle{
+            border-color:rgb(14, 237, 226);
+            border-width: 3px;
+            border-radius: 10px;
+            display: flex;
+            flex-flow: row wrap;
+            font-size: 20px;
+            position: absolute;
+            top: 230px;
+            left: 65px;
+            width: 710px;
+            height: 700px;
+        }
+
+        .circle2{
+            border-color:rgb(14, 237, 226);
+            border-radius: 10px;
+            display: flex;
+            flex-flow: column wrap-reverse;
+            font-size: 20px;
+            position: absolute;
+            top: 230px;
+            left: 75px;
+            width: 700px;
+            height: 280px;
+        }
+
+        .circlebutdown{
+            border-color:rgb(14, 237, 226);
+            border-radius: 10px;
+            display: flex;
+            flex-flow: column wrap-reverse;
+            font-size: 20px;
+            position: absolute;
+            top: 613px;
+            left: 75px;
+            width: 700px;
+            height: 439px;
+        }
+        .input{
+            margin: 0 0 25px 0;
+            font-size: 17px;
+            height: 50px;
+            border-radius: 10px;
+            border: 2px solid rgb(175, 175, 175);
+        }
+        .next{
+            position: absolute;
+            left: 15px;
+            bottom: 20px;
+            width: 700px;
+            height: 50px;
+            border-radius: 10px;
+            border: 2px solid rgb(255, 255, 255);
+            color: #656363;
+            font-size: 23px;
+            transition: all 1s;
+        }
+        
+        .next:hover{
+            border: 2px solid rgb(30, 30, 30);
+            color: #9e4446;
+            cursor: pointer;
+        }
+
+        .next:active{
+            background-color:rgb(211, 211, 211);
+            transition: all .2s;
+        }
+        
+        .goinleft{
+            transform: translateX(-1300px);
+            transition: all linear 0.9s;
+        }
+
+        .gOincenter{
+            transform: translateX(0);
+            transition: all linear 0.9s;
+        }
+
+        .GOinRight{
+            transform: translateX(1300);
+            transition: all linear 0.9s;
+        }
+        
+
+        .scrollingdiv{
+            overflow-y: scroll;
+            background-color: rgba(0, 0, 0, 0);
+            max-height: 499px;
+            width: 713px;
+            flex-wrap: wrap !important;
+            display: flex;
+        }
+
+        .pizzacontainers{
+            z-index: 1000;
+            background-position-y:bottom;
+            background-repeat: no-repeat;
+            background-size: 100% 100%;
+            background-image: url("sources/4sira.png");
+            width: 230px;
+            height: 230px;
+            border: 2px solid rgb(30, 30, 30);
+            border-radius: 10px;
+            position: relative;
+            margin: 0 3px 10px 0px;
+        }
+
+        .fourcheesecontainer{
+            background-image: url("sources/4sira.png");
+        }
+
+        .fivecheesecontainer{
+            background-image: url("sources/5Sirov.png");
+            background-size: 120% 100% !important;
+            background-position-x:center;
+        }
+
+        .assorticontainer{
+            background-image: url("sources/assorti.png");
+        }
+
+        .belaiyacontainer{
+            background-image: url("sources/Belaiya.png");
+            background-size: 100% 107% !important;
+            background-position-y: -15px;
+        }
+
+        .calconecontainer{
+            background-image: url("sources/Calcone.png");
+        }
+        
+        .margaritacontainer{
+            background-image: url("sources/Margarita.png");
+        }
+
+        .miasnayacontainer{
+            background-image: url("sources/Miasnaya.png");
+            background-size: 120% 100% !important;
+            background-position-x:center;
+        }
+
+        .morskoikoktelcontainer{
+            background-image: url("sources/MorskoiKoktel.png");
+        }
+
+        .noepoletanskayacontainer{
+            background-image: url("sources/Noepoletanskaya.png");
+        }
+
+        .pepperonicontainer{
+            background-image: url("sources/Pepperoni.png");
+        }
+
+        .pomidornayacontainer{
+            background-image: url("sources/Pomidornaya.png");
+        }
+
+        .siciliyskayacontainer{
+            background-image: url("sources/Siciliyskaya.png");
+        }
+
+        .sirnapomidornayacontainer{
+            background-image: url("sources/SirnaPomidornaya.png");
+        }
+
+        .sirnapomidornayacontainer{
+            background-image: url("sources/SirnaPomidornaya.png");
+        }
+        
+        .suprimcontainer{
+            background-image: url("sources/Suprim.png");
+        }
+
+        .vegetariancontainer{
+            background-image: url("sources/Vegetarian.png");
+        }
+
+        .vegetariansgribamicontainer{
+            background-image: url("sources/VegetarianSGribami.png");
+        }
+
+
+
+        .fourcheesecontainer>input:checked .container{
+            border: 2px solid white;
+        }
+
+        .image{
+            background-color: rgba(0, 0, 0, 0);
+            color: rgba(255, 255, 255, 0);
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            width: 230px;
+            height: 230px;
+            z-index: 100000;
+        }
+        .image:hover{
+            cursor: pointer;
+            
+        }
+
+        .legend{
+            background-color: rgb(14, 237, 226);
+            border-radius: 5px; text-transform: uppercase;
+            font-size: 18px;
+            padding: 5px;
+            letter-spacing: 2px;
+        }
+
+        .point{
+            background-color: red;
+            width: 112px;
+            height: 39px;
+            transform: scaleX(0);
+            transform-origin: center left;
+            left: 0px;
+            top: 15px;
+            position: absolute;
+            transition: all .7s ease;
+            border-top: 3px groove;
+            border-left: 3px groove;
+            border-right: 3px ridge;
+            border-bottom: 3px ridge;
+            border-bottom-right-radius: 10px;
+            border-top-right-radius: 10px;
+            font-size: 0px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: rgb(238, 238, 238);
+        }
+        .check:checked ~ .point{
+            transform: scaleX(1);
+
+            transform-origin: center left;
+            font-size: 20px;
+            background-color: rgb(0, 190, 0);
+            transition: all .7s ease;
+        }
+
+        .image:hover ~ .point{
+            transform: scaleX(1);
+            transform-origin: center left;
+            font-size: 20px;
+            transition: all .7s ease;
+        }
+
+        .pizzaname{
+            z-index: 10000;
+            position: absolute;
+            
+            bottom: 7px;
+            box-shadow: 0px 2px 2px black;
+            color: rgb(238, 238, 238);
+            text-shadow: 2px 2px 1px rgb(30, 30, 30);
+            background-color:rgba(0, 100, 200, 1);
+            padding: 10px;
+            border-radius: 10px;
+        }
+
+        .positorforpizzaname{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+        }
+
+        .check{
+            width: 25px;
+            height: 25px;
+            background-color:rgba(0, 0, 0, 0);
+            display: none;
+        }
+
+        .pizzaorder{
+            position: absolute;
+            left: 15px;
+            bottom: 90px;
+            width: 685px;
+            height: 59px;
+            border-radius: 10px;
+            border: 2px solid rgb(255, 255, 255);
+            color: hsl(220, 15%, 30%);
+            font-size: 23px;
+            transition: all 1s;
+            display: flex;
+            justify-content: center;
+            text-align: center;
+            border-top: 5px groove;
+            border-left: 5px groove;
+            border-right: 5px ridge;
+            border-bottom: 5px ridge;
+            background-color: hsl(0deg 0% 99%);
+        }
+        
+        
+        .pizzaordername{
+            bottom: 125px;
+            left: 38%;
+            position: absolute;
+            font-size: 25px;
+            color: #ededed;
+            background-color: #4169E1;
+            padding: 10px;
+            border-radius: 10px;
+        }
+        
+        .circle3{
+            border-color:rgb(14, 237, 226);
+            border-width: 3px;
+            border-radius: 10px;
+            display: flex;
+            flex-flow: row wrap;
+            font-size: 20px;
+            position: absolute;
+            top: 230px;
+            left: 65px;
+            width: 710px;
+            height: 500px;
+        }
+
+
+        .input1{
+            background-image: url(sources/Visa.png);
+            width: 690px;
+            height: 120px;
+            background-repeat: no-repeat;
+            background-size: 100% 100%;
+            background-position: 100% 100%;
+            position: absolute;
+            top: 7px;
+            left: 15px;
+        }
+
+        .input2{
+            background-image: url(sources/Visa.png);
+            width: 690px;
+            height: 120px;
+            background-repeat: no-repeat;
+            background-size: 100% 100%;
+            background-position: 100% 100%;
+            position: absolute;
+            top: 137px;
+            left: 15px;
+        }
+
+        .input3{
+            background-image: url(sources/Visa.png);
+            width: 690px;
+            height: 120px;
+            background-repeat: no-repeat;
+            background-size: 100% 100%;
+            background-position: 100% 100%;
+            position: absolute;
+            top: 7px;
+            left: 15px;
+        }
+
+        .input4{
+            background-image: url(sources/Visa.png);
+            width: 690px;
+            height: 120px;
+            background-repeat: no-repeat;
+            background-size: 100% 100%;
+            background-position: 100% 100%;
+            position: absolute;
+            top: 7px;
+            left: 15px;
+        }
+
+        .inputer{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 700px;
+            height: 300px;
+            background-color: black;
+        }
+        
+    </style>
+</head>
+<body>
+    <header>
+        <div class = "settings" onclick="myFunction()">
+            <button class = "SettingsText" id = "SettingsText">______<br>______<br>______</button>
+            <div class="settings-content SettingsAnimStart" id="SettingsLinks">
+                <a class = "MobileA" href="index.html">💻 Назад на сайт ➔</a>
+                <a class = "OtherA" href="pizzamobile.html">📱 Назад на сайт ➔</a>
+                <a class = "OtherA" href="main.html">Главное Меню</a>
+            </div>
+        </div>
+        <h1 class = "selected">Заказать пиццу</h1>
+        <h1 class = "name">Пицца</h1>
+        <nav>
+            <a class = "Zakaz" href = "index.html">Меню</a>
+            <a class = "Statia" href = "OrderPage.html">Заказать пиццу</a>
+        </nav>
+    </header>
+    <main>
+        <div class = "firststepdiv" id = "firststepdiv">
+            <h1 class = "Name">Закажите пиццу себе домой всего за 3 шага!</h1>
+            <h2 class = "StepText">Шаг 1</h2>
+            <div class = "circles">
+                <div class = "StepCirclesChoised">П</div>
+                <div class = "FirstStepCircle">П</div>
+                <div class = "SecondStepCircle">П</div>
+            </div>
+            <div class = "DivNext" id = "firstnextbutton" onclick="nextfrom1step()">Следующий</div>
+            <fieldset class = "circle">
+                <legend class = "legend">Выбор пиццы</legend>
+                <div class = "scrollingdiv">
+
+                    
+                    <div class = "pizzacontainers fourcheesecontainer">
+                        <label for="fourcheesecheck" class = "image" style="z-index: 11000;" onclick="">Привет</label>
+                        <input id = "fourcheesecheck" class = "check" style="z-index: 10000;" name="FourCheese" type="checkbox" placeholder="4 Сыра" required/>
+
+                        <div class = "point">18.45 ₾</div>
+                        <div class = "positorforpizzaname">
+                            <label for="fourcheesecheck" class = "pizzaname">4 Сыра</label>
+                        </div>
+                    </div>
+
+                    <div class = "pizzacontainers fivecheesecontainer">
+                        <label for="fivecheesecheck" class = "image" style="z-index: 11000;" onclick="">Привет</label>
+                        <input id = "fivecheesecheck" class = "check" style="z-index: 10000;" name="FiveCheese" type="checkbox" placeholder="5 Сыров" required/>
+
+                        <div class = "point">18.45 ₾</div>
+                        <div class = "positorforpizzaname">
+                            <label for="fivecheesecheck" class = "pizzaname">5 Сыров</label>
+                        </div>
+                    </div>
+                    
+                    <div class = "pizzacontainers assorticontainer">
+                        <label for="assorticheck" class = "image" style="z-index: 11000;" onclick="">Привет</label>
+                        <input id = "assorticheck" class = "check" style="z-index: 10000;" name="Assorti" type="checkbox" placeholder="Ассорти" required/>
+
+                        <div class = "point">18.45 ₾</div>
+                        <div class = "positorforpizzaname">
+                            <label for="assorticheck" class = "pizzaname">Ассорти</label>
+                        </div>
+                    </div>
+
+                    <div class = "pizzacontainers belaiyacontainer">
+                        <label for="belaiyacheck" class = "image" style="z-index: 11000;" onclick="">Привет</label>
+                        <input id = "belaiyacheck" class = "check" style="z-index: 10000;" name="Belaiya" type="checkbox" placeholder="Белая" required/>
+
+                        <div class = "point">18.45 ₾</div>
+                        <div class = "positorforpizzaname">
+                            <label for="belaiyacheck" class = "pizzaname">Белая</label>
+                        </div>
+                    </div>
+
+                    <div class = "pizzacontainers calconecontainer">
+                        <label for="calconecheck" class = "image" style="z-index: 11000;" onclick="">Привет</label>
+                        <input id = "calconecheck" class = "check" style="z-index: 10000;" name="Calcone" type="checkbox" placeholder="Кальцоне" required/>
+
+                        <div class = "point">18.45 ₾</div>
+                        <div class = "positorforpizzaname">
+                            <label for="calconecheck" class = "pizzaname">Кальцоне</label>
+                        </div>
+                    </div>
+
+                    <div class = "pizzacontainers margaritacontainer">
+                        <label for="margaritacheck" class = "image" style="z-index: 11000;" onclick="">Привет</label>
+                        <input id = "margaritacheck" class = "check" style="z-index: 10000;" value = "Маргарита" name="Margarita" type="checkbox" placeholder="Маргарита" onchange='newelement("margaritacheck");' required/>
+
+                        <div class = "point">18.45 ₾</div>
+                        <div class = "positorforpizzaname">
+                            <label for="margaritacheck" class = "pizzaname">Маргарита</label>
+                        </div>
+                    </div>
+                    
+                    <div class = "pizzacontainers miasnayacontainer">
+                        <label for="miasnayacheck" class = "image" style="z-index: 11000;" onclick="">Привет</label>
+                        <input id = "miasnayacheck" class = "check" style="z-index: 10000;" name="Miasnaya" type="checkbox" placeholder="Мясная" required/>
+
+                        <div class = "point">18.45 ₾</div>
+                        <div class = "positorforpizzaname">
+                            <label for="miasnayacheck" class = "pizzaname">Мясная</label>
+                        </div>
+                    </div>
+
+
+                    
+                </div>
+                <input id = "pizzaorder" class = "pizzaorder" type="text" value="Маргарита" name="other1" readonly>
+                <h1 class = "pizzaordername">Ваш заказ : </h1>
+                <input id = "nextbutton" class = "next"  type="submit" value="Далее  ➜" onclick="nextfrom1step()">
+            </fieldset>
+        </div>
+
+        <div class = "secondstepdiv" id = "secondstepdiv">
+            <h1 class = "Name">Закажите пиццу себе домой всего за 3 шага!</h1>
+            <h2 class = "StepText">Шаг 2</h2>
+            <div class = "circles">
+                <div class = "FirstStep2Circle">П</div>
+                <div class = "Step2CirclesChoised">П</div>
+                <div class = "SecondStep2Circle">П</div>
+            </div>
+            <div class = "DivNext" id = "secondnextbutton" onclick="nextfrom2step()">Следующий</div>
+            <div class = "DivPrevious" id = "secondpreviousbutton" onclick="previousfrom2step()">Предыдущий</div>
+            <form>
+                <fieldset class = "circle2">
+                    <legend class = "legend">Местоположение</legend>
+                    <input class = "input" name="Country" type="text" placeholder="Страна" required/>
+                    <input class = "input" name="City" type="text" placeholder="Город" required/>
+                    <input class = "input" name="Street" type="text" placeholder="Улица и Дом" required/>
+                </fieldset>
+                <fieldset class = "circlebutdown">
+                    <legend class = "legend">Информация</legend>
+                    <input class = "input" name="Name" type="text" placeholder="Имя" required/>
+                    <input class = "input" name="Surname" type="text" placeholder="Фамилия                                                                                                  *Не обьязательно*"/>
+                    <input class = "input" inputmode="tel" name="Phone" type="tel" placeholder="Номер телефона (+1 234-567-890)" required/>
+                    <input class = "input" inputmode="email" name="Phone" type="email" placeholder="E-mail" required/>
+                    <input id = "nextbutton" class = "next" type="submit" value="Далее  ➜" onclick="nextfrom2step()">
+                </fieldset>
+            </form>
+            
+        </div>
+
+        <div class = "thirdstepdiv" id = "thirdstepdiv">
+            <h1 class = "Name">Закажите пиццу себе домой всего за 3 шага!</h1>
+            <h2 class = "StepText">Шаг 3</h2>
+            <div class = "circles">
+                <div class = "FirstStep2Circle">П</div>
+                <div class = "Step2CirclesChoised">П</div>
+                <div class = "SecondStep2Circle">П</div>
+            </div>
+            <div class = "DivPrevious" id = "thirdpreviousbutton" onclick="previousfrom3step()">Предыдущий</div>
+            <fieldset class = "circle3">
+                <legend class = "legend">Платёжная Информация</legend>
+                <div class = inputer>
+                    <input class = "" name="Visa" type="radio"/>
+
+                    <input class = "input2" name="Mastercard" type="radio"/>
+                    <input class = "input3" name="Applepay" type="radio"/>
+                    <input class = "input4" name="Money" type="radio"/>
+                </div>
+                <input id = "nextbutton" class = "next" type="submit" value="Завершить" onclick="GIGADIVS()">
+            </fieldset>
+        </div>
+    </main>
+    <footer>
+        <h1>Пицца</h1>
+        <h2 class = "year">2022 - 2022</h2>
+        <h2 class = "privet">привет</h2>
+        <h2 class = "pon">®</h2>
+    </footer>
+    <script>
+        var firststepdiv = document.getElementById("firststepdiv");
+        var secondstepdiv = document.getElementById("secondstepdiv");
+        var thirdstepdiv = document.getElementById("thirdstepdiv");
+        var nextbutton = document.getElementById("nextbutton");
+        
+        function nextfrom1step() {
+            
+            firststepdiv.classList.toggle("goinleft");
+            secondstepdiv.classList.toggle("gOincenter");
+        }
+
+        function nextfrom2step() {
+            secondstepdiv.classList.remove("gOincenter");
+            secondstepdiv.classList.toggle("goinleft");
+            thirdstepdiv.classList.toggle("gOincenter");
+        }
+
+        function previousfrom2step() {
+            secondstepdiv.classList.remove("gOincenter");
+            secondstepdiv.classList.toggle("GOinRight");
+            firststepdiv.classList.remove("goinleft");
+        }
+
+        function previousfrom3step() {
+            secondstepdiv.classList.remove("goinleft");
+            thirdstepdiv.classList.remove("gOincenter");
+            secondstepdiv.classList.toggle("gOincenter");
+        }
+
+        function myFunction() {
+            var myDropdown = document.getElementById("SettingsLinks");
+            if (myDropdown.classList.contains("SettingsAnimStart")) {
+                document.getElementById("SettingsLinks").classList.remove("SettingsAnimStart");
+                document.getElementById("SettingsLinks").classList.toggle("SettingsAnimEnd");
+                document.getElementById("SettingsText").classList.remove("SettingsLeftAnimEnd");
+                document.getElementById("SettingsText").classList.toggle("SettingsLeftAnimStart");
+                
+            }
+            else{
+                document.getElementById("SettingsLinks").classList.remove("SettingsAnimEnd");
+                document.getElementById("SettingsLinks").classList.toggle("SettingsAnimStart");
+                document.getElementById("SettingsText").classList.remove("SettingsLeftAnimStart");
+                document.getElementById("SettingsText").classList.toggle("SettingsLeftAnimEnd");
+            }
+        }
+        
+        // Close the dropdown if the user clicks outside of it
+        window.onclick = function(e) {
+        if (!e.target.matches('.settings, .SettingsText')) {
+            var myDropdown = document.getElementById("SettingsLinks");
+            if (myDropdown.classList.contains('SettingsAnimEnd')) {
+                myDropdown.classList.remove('SettingsAnimEnd');
+                myDropdown.classList.toggle('SettingsAnimStart');
+                document.getElementById("SettingsText").classList.remove("SettingsLeftAnimStart");
+                document.getElementById("SettingsText").classList.toggle("SettingsLeftAnimEnd");
+            }
+        }
+        }
+
+
+        function newelement(pizzacheck) {
+            var text = document.getElementsByName('other1');
+            var pizzacheck = documemt.getElementById(pizzacheck);
+            if (pizzacheck.checked){
+                (text.value).innerHTML(pizzacheck.value);
+            }
+
+            else {
+                (text.value).append(pizzacheck.value);
+            }
+
+            
+        }
+
+        
+    </script>
+</body>
+</html>

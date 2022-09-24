@@ -1,0 +1,970 @@
+/* fonts */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300&family=Work+Sans&display=swap');
+/* fonts in usage font-family: 'Inter', sans-serif;
+font-family: 'Work Sans', sans-serif; */
+/* [ fonts ] upper */
+
+.name{
+    position: fixed;
+    top: 3px;
+    left: 350px;
+}
+
+body{
+    height: 1900px;
+    margin: 200px 0 0 0;
+    background-image: url("WhiteThemeFon.jpeg");
+    background-repeat: repeat;
+    background-attachment: fixed;
+    background-size: 100% 100%;
+    background-color: rgb(30, 30, 30);
+}
+
+header{
+    background-color: rgb(30, 30, 30);
+    position: fixed;
+    top: 0px;
+    left: 277px;
+    width: 902px;
+    margin: 0 0 0 0;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    position: fixed;
+    z-index: 1001;
+}
+
+.main{
+    background-color: #CEB01D;
+    position: absolute;
+    left: 275px;
+    top: 000px;
+    z-index: 99;
+    height: 4000px;
+    width: 900px;
+    border-radius: 10px;
+    border: 3px solid black;
+}
+
+header > h1{
+    color: white;
+}
+
+footer{
+    background-color: rgb(30, 30, 30);
+    width: 905px;
+    height: 400px;
+    top: 4025px;
+    left: 275px;
+    position: absolute;
+    border: 2px solid rgb(70, 70, 70);
+}
+
+footer > h1{
+    color: rgb(230, 230, 230);
+    position: absolute;
+    top: 150px;
+    left: 397px;
+    font-size: 40px;
+}
+
+
+/* footer text */
+.year{
+    position: absolute;
+    top: 333px;
+    left: 20px;
+    color: rgb(230, 230, 230)
+}
+
+.privet{
+    position: absolute;
+    top: 333px;
+    right: 57px;
+    color: rgb(230, 230, 230);
+}
+
+.pon{
+    position: absolute;
+    top: 333px;
+    right: 20px;
+    color: rgb(230, 230, 230);
+}
+
+/* [ footer text ] upper */
+
+/* selected page (header) */
+.selected{
+    display: flex;
+    justify-content: center;
+    
+}
+/* [ selected page (header) ] upper */
+
+/* settings button */
+.settings{
+    font-size: 8px;
+    position:absolute;
+    left: 13px;
+    top: 13px;
+    color: white;
+    font-weight: bold;
+    
+    text-align: center;
+    background-color: rgba(200, 200, 200, 0);
+    background-size: 100% 1em;
+    cursor: pointer;
+    border-radius: 100px;
+    height: 50px;
+    width: 50px;
+    box-shadow: 0px 0px 0px 0px rgba(200, 200, 200, 0);
+    transition: box-shadow 1s linear;
+    margin: 0.5em;
+}
+
+.settings:active{
+    box-shadow: 0px 0px 0px 3px rgba(170, 170, 170, 0.5);
+    background-color: rgba(170, 170, 170, 0.5);
+    transition:
+        background-color 0.01s,
+        box-shadow 0.1s linear;
+}
+
+.settings:hover,
+.SettingsText:hover{
+    cursor: pointer;
+}
+
+.SettingsText{
+    position: absolute;
+    left: 13px;
+}
+/* [ settings button ] upper */
+
+/* settings button animate */
+
+/* settings button animate */
+
+.settings-content {
+    display: block;
+    position: absolute;
+    background-color: rgb(30, 30, 30);
+    min-width: 887px;
+    height: 300px;
+    left: -17px;
+    top: 55px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 999;
+    border-radius: 10px;
+    line-height: 33px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow: column wrap-reverse;
+    border: 2px solid rgb(51, 48, 48);
+    transition: all .3s ease-in;
+}
+
+.settings-content .OtherA {
+    float: none;
+    color: #3366ff;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+    font-size: 15px;
+    transition: all;
+    background-color: #292929;
+    border-radius: 10px;
+    border: 2px solid rgb(185, 185, 185);
+    margin: 0 0 10px 0;
+    transition: all 1s;
+}
+
+.settings-content .MobileA {
+    float: none;
+    color: #3366ff;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+    font-size: 15px;
+    transition: all;
+    background-color: #292929;
+    border-radius: 10px;
+    border: 2px solid rgb(185, 185, 185);
+    margin: 0 0 10px 0;
+    transition: all 1s;
+}
+
+.settings-content a:hover {
+    color: #9e4446;
+    background-color: #ddd;
+    border: 2px solid #9e4446;;
+    border-radius: 10px;
+    transition: all 1s;
+}
+
+.show {
+    display: block;
+}
+.SettingsText{
+position: absolute;
+left: 6px;
+top: 6px;
+font-size: 8px;
+background-color: rgba(0,0,0,0);
+color: white;
+border: 0;
+}
+
+.SettingsAnimEnd{
+    transform: translateY(1px);
+    z-index: 0;
+    transition: all .25s ease-in;
+    
+}
+
+.SettingsAnimStart{
+    transform: translateY(-500px);
+    transition: all .25s ease-in;
+}
+
+.SettingsLeftAnimStart{
+    animation: SettingsLeftAnimKeyframeStart .5s ease-in;
+    animation-fill-mode: forwards;
+}
+
+.SettingsLeftAnimEnd{
+    animation: SettingsLeftAnimKeyframeEnd .5s ease-in;
+    animation-fill-mode: forwards;
+}
+@keyframes SettingsLeftAnimKeyframeStart {
+    0%{
+        transform: rotate(0deg);
+    }
+    50%{
+        transform: rotate(90deg);
+        left: 8px;
+        top: 8px;
+    }
+    55%{
+        transform: rotate(95deg);
+        left: 8px;
+        top: 8px;
+    }
+    60%{
+        transform: rotate(90deg);
+        left: 8px;
+        top: 8px;
+    }
+    100%{
+        transform: rotate(90deg);
+        left: 8px;
+        top: 8px;
+    }
+}
+
+@keyframes SettingsLeftAnimKeyframeEnd{
+    0%{
+        transform: rotate(90deg);
+        left: 8px;
+        top: 8px;
+    }
+    40%{
+        transform: rotate(0deg);
+        left: 6px;
+        top: 6px;
+    }
+    55%{
+        transform: rotate(-5deg);
+    }
+    60%{
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(0deg);
+    }
+}
+/* [ settings button animate ] upper */
+
+
+/* a buttons (header) */
+.Statia{
+    right: 280px;
+    top: 30px;
+    position: fixed;
+    color: white;
+    font-size: 20px;
+    text-decoration: None;
+    background: 
+        linear-gradient(to right, rgba(100, 200, 200, 1), rgba(100, 200, 200, 1)),
+        linear-gradient(to right, rgba(255, 0, 0, 1), rgba(255, 0, 180, 1), rgba(0, 100, 200, 1));
+    background-size: 100% 0.1em, 0 0.1em;
+    background-position: 100% 100%, 0 100%;
+    background-repeat: no-repeat;
+    transition: background-size 1000ms;
+}
+
+.Statia:hover,
+.Statia:focus{
+    background-size: 0 0.1em, 100% 0.1em;
+}
+
+.Zakaz{
+    right: 430px;
+    top: 30px;
+    position: fixed;
+    color: white;
+    font-size: 20px;
+    text-decoration: None;
+    background:
+        linear-gradient(to right, rgba(100, 200, 200, 1), rgba(100, 200, 200, 1)),
+        linear-gradient(to right, rgba(100, 200, 200, 1), rgba(100, 200, 200, 1)),
+        linear-gradient(to right, rgba(255, 0, 0, 1), rgba(255, 0, 180, 1), rgba(0, 100, 200, 1));
+    background-size: 50% 0.1em, 50% 0.1em, 0 0.1em;
+    background-position: 100% 100%, 0 100%, 50% 100%;
+    background-repeat: no-repeat;
+    transition: background-size 1000ms;
+}
+.Zakaz:hover,
+.Zakaz:focus{
+    background-size: 0 0.1em, 0 0.1em, 100% 0.1em;
+}
+
+
+/* [a buttons (header)] upper */
+
+/* Text bottomer than pizza images */
+.smalltext{
+    display: none;
+}
+
+.DownText{
+    color: white;
+    width: 270px;
+    height: 60px;
+    border-radius: 40px;
+    background-color: rgb(30, 30, 30);
+    font-size: 13px;
+    z-index: 10;
+    transition: font-size 500ms;
+}
+.DownText:hover,
+.DownText:focus{
+    font-size: 15px;
+}
+
+.DownTextBig{
+    color: white;
+    width: 270px;
+    height: 60px;
+    border-radius: 40px;
+    background-color: rgb(30, 30, 30);
+    font-size: 12px;
+    z-index: 10;
+    transition: font-size 500ms;
+}
+.DownTextBig:hover,
+.DownTextBig:focus{
+    font-size: 14px;
+}
+/* [Text bottomer than pizza images] upper */
+
+/* */
+.FourCheese{
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    position: absolute;
+    top: 140px;
+    left: 100px;
+    background-color: #FCD19C;
+    width: 700px;
+    height: 230px;
+    border-radius: 5px;
+    background-position: left 15% top 25%;
+    background-size: 5% 50%;
+    background-repeat: no-repeat;
+    color: rgba(0, 0, 0, 0);
+    border: 3px solid #a6865e;
+    transition: width 500ms;
+    transition: height 500ms;
+    z-index: 1000;
+}
+
+.VegetarianSGribami{
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    position: absolute;
+    top: 380px;
+    left: 100px;
+    background-color: #FCD19C;
+    width: 700px;
+    height: 230px;
+    border-radius: 5px;
+    background-position: left 15% top 25%;
+    background-size: 5% 50%;
+    background-repeat: no-repeat;
+    color: rgba(0, 0, 0, 0);
+    border: 3px solid #a6865e;
+    transition: width 500ms;
+    transition: height 500ms;
+    z-index: 1001;
+}
+
+.VegetarianSGribami .PizzaNameH1,
+.SirnaPomidornaya .PizzaNameH1{
+    font-size: 20px;
+    top: 27px;
+    left: 325px;
+}
+
+.SirnaPomidornaya{
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    position: absolute;
+    top: 620px;
+    left: 100px;
+    background-color: #FCD19C;
+    width: 700px;
+    height: 230px;
+    border-radius: 5px;
+    background-position: left 15% top 25%;
+    background-size: 5% 50%;
+    background-repeat: no-repeat;
+    color: rgba(0, 0, 0, 0);
+    border: 3px solid #a6865e;
+    transition: width 500ms;
+    transition: height 500ms;
+    z-index: 1001;
+}
+
+.Suprim{
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    position: absolute;
+    top: 860px;
+    left: 100px;
+    background-color: #FCD19C;
+    width: 700px;
+    height: 230px;
+    border-radius: 5px;
+    background-position: left 15% top 25%;
+    background-size: 5% 50%;
+    background-repeat: no-repeat;
+    color: rgba(0, 0, 0, 0);
+    border: 3px solid #a6865e;
+    transition: width 500ms;
+    transition: height 500ms;
+    z-index: 1001;
+}
+
+.Siciliyskaya{
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    position: absolute;
+    top: 1100px;
+    left: 100px;
+    background-color: #FCD19C;
+    width: 700px;
+    height: 230px;
+    border-radius: 5px;
+    background-position: left 15% top 25%;
+    background-size: 5% 50%;
+    background-repeat: no-repeat;
+    color: rgba(0, 0, 0, 0);
+    border: 3px solid #a6865e;
+    transition: width 500ms;
+    transition: height 500ms;
+    z-index: 1001;
+}
+
+.FiveCheese{
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    position: absolute;
+    top: 1340px;
+    left: 100px;
+    background-color: #FCD19C;
+    width: 700px;
+    height: 230px;
+    border-radius: 5px;
+    background-position: left 15% top 25%;
+    background-size: 5% 50%;
+    background-repeat: no-repeat;
+    color: rgba(0, 0, 0, 0);
+    border: 3px solid #a6865e;
+    transition: width 500ms;
+    transition: height 500ms;
+    z-index: 1001;
+}
+
+.Miasnaya{
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    position: absolute;
+    top: 1580px;
+    left: 100px;
+    background-color: #FCD19C;
+    width: 700px;
+    height: 230px;
+    border-radius: 5px;
+    background-position: left 15% top 25%;
+    background-size: 5% 50%;
+    background-repeat: no-repeat;
+    color: rgba(0, 0, 0, 0);
+    border: 3px solid #a6865e;
+    transition: width 500ms;
+    transition: height 500ms;
+    z-index: 1001;
+}
+
+.Assorti{
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    position: absolute;
+    top: 1820px;
+    left: 100px;
+    background-color: #FCD19C;
+    width: 700px;
+    height: 230px;
+    border-radius: 5px;
+    background-position: left 15% top 25%;
+    background-size: 5% 50%;
+    background-repeat: no-repeat;
+    color: rgba(0, 0, 0, 0);
+    border: 3px solid #a6865e;
+    transition: width 500ms;
+    transition: height 500ms;
+    z-index: 1001;
+}
+
+.Pepperoni{
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    position: absolute;
+    top: 2060px;
+    left: 100px;
+    background-color: #FCD19C;
+    width: 700px;
+    height: 230px;
+    border-radius: 5px;
+    background-position: left 15% top 25%;
+    background-size: 5% 50%;
+    background-repeat: no-repeat;
+    color: rgba(0, 0, 0, 0);
+    border: 3px solid #a6865e;
+    transition: width 500ms;
+    transition: height 500ms;
+    z-index: 1001;
+}
+
+.Pomidornaya{
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    position: absolute;
+    top: 2300px;
+    left: 100px;
+    background-color: #FCD19C;
+    width: 700px;
+    height: 230px;
+    border-radius: 5px;
+    background-position: left 15% top 25%;
+    background-size: 5% 50%;
+    background-repeat: no-repeat;
+    color: rgba(0, 0, 0, 0);
+    border: 3px solid #a6865e;
+    transition: width 500ms;
+    transition: height 500ms;
+    z-index: 1001;
+}
+
+.Noepoletanskaya{
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    position: absolute;
+    top: 2540px;
+    left: 100px;
+    background-color: #FCD19C;
+    width: 700px;
+    height: 230px;
+    border-radius: 5px;
+    background-position: left 15% top 25%;
+    background-size: 5% 50%;
+    background-repeat: no-repeat;
+    color: rgba(0, 0, 0, 0);
+    border: 3px solid #a6865e;
+    transition: width 500ms;
+    transition: height 500ms;
+    z-index: 1001;
+}
+
+.Calcone{
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    position: absolute;
+    top: 2780px;
+    left: 100px;
+    background-color: #FCD19C;
+    width: 700px;
+    height: 230px;
+    border-radius: 5px;
+    background-position: left 15% top 25%;
+    background-size: 5% 50%;
+    background-repeat: no-repeat;
+    color: rgba(0, 0, 0, 0);
+    border: 3px solid #a6865e;
+    transition: width 500ms;
+    transition: height 500ms;
+    z-index: 1001;
+}
+
+.Belaiya{
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    position: absolute;
+    top: 3020px;
+    left: 100px;
+    background-color: #FCD19C;
+    width: 700px;
+    height: 230px;
+    border-radius: 5px;
+    background-position: left 15% top 25%;
+    background-size: 5% 50%;
+    background-repeat: no-repeat;
+    color: rgba(0, 0, 0, 0);
+    border: 3px solid #a6865e;
+    transition: width 500ms;
+    transition: height 500ms;
+    z-index: 1001;
+}
+
+.Margarita{
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    position: absolute;
+    top: 3260px;
+    left: 100px;
+    background-color: #FCD19C;
+    width: 700px;
+    height: 230px;
+    border-radius: 5px;
+    background-position: left 15% top 25%;
+    background-size: 5% 50%;
+    background-repeat: no-repeat;
+    color: rgba(0, 0, 0, 0);
+    border: 3px solid #a6865e;
+    transition: width 500ms;
+    transition: height 500ms;
+    z-index: 1001;
+}
+
+.Vegetarian{
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    position: absolute;
+    top: 3500px;
+    left: 100px;
+    background-color: #FCD19C;
+    width: 700px;
+    height: 230px;
+    border-radius: 5px;
+    background-position: left 15% top 25%;
+    background-size: 5% 50%;
+    background-repeat: no-repeat;
+    color: rgba(0, 0, 0, 0);
+    border: 3px solid #a6865e;
+    transition: width 500ms;
+    transition: height 500ms;
+    z-index: 1001;
+}
+
+.MorskoiKoktel{
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    position: absolute;
+    top: 3740px;
+    left: 100px;
+    background-color: #FCD19C;
+    width: 700px;
+    height: 230px;
+    border-radius: 5px;
+    background-position: left 15% top 25%;
+    background-size: 5% 50%;
+    background-repeat: no-repeat;
+    color: rgba(0, 0, 0, 0);
+    border: 3px solid #a6865e;
+    transition: width 500ms;
+    transition: height 500ms;
+    z-index: 1001;
+}
+
+.PizzaImg{
+    position: absolute;
+    top: 30px;
+    left: 25px;
+    border-radius: 7px;
+    height: 170px;
+    width: 250px;
+    border: 2px solid #31302f;
+}
+
+.PizzaNameH1{
+    position: absolute;
+    font-size: 25px;
+    top: 22px;
+    left: 325px;
+    z-index: 9999;
+    color: black;
+    font-family: 'Inter', sans-serif;
+    transition: transform .4s;
+}
+
+.PizzaOpisanieH3{
+    position: absolute;
+    top: 70px;
+    left: 240px;
+    font-size: 15px;
+    z-index: 999;
+    color: black;
+    font-family: 'Inter', sans-serif;
+    line-height: 23px;
+    transition: transform .4s;
+}
+
+.MoreInfoButton{
+    z-index: 1000;
+    background-color: #E26043;
+    display: flex;
+    justify-content: center;
+    border-radius: 5px;
+    position: absolute;
+    left: 430px;
+    top: 160px;
+    width: 150px;
+    height: 50px;
+    color: white;
+    font-family: 'Inter', sans-serif;
+    align-items: center;
+    transform: translateX(100px);
+    transition: all .2s ease-in;
+    text-decoration: none;
+}
+
+.MoreInfoButton:hover{
+    left: 415px;
+    top: 160px;
+    width: 175px;
+    transition: width .2s ease-in;
+    transition: left .15s ease-in;
+}
+/*
+.MoreInfoButton:hover~.PizzaOpisanieH3{
+    position: absolute;
+    top: 70px;
+    transform: translateX(-10px);
+    left: 230px;
+    font-size: 15px;
+    z-index: 999;
+    color: black;
+    font-family: 'Inter', sans-serif;
+    line-height: 23px;
+}
+*/
+
+div>.MoreInfoButton:hover~.PizzaOpisanieH3, 
+div>.MoreInfoButton:hover~.PizzaNameH1{
+    transform: translateX(-15px);
+    transition: transform .4s;
+}
+
+
+
+.MoreInfoButton > h2{
+    display: none;
+    transform: translateX(25px);
+}
+
+.MoreInfoButton:hover > h2{
+    display: block;
+    animation-name: stringStart;
+    animation-duration: 0.2s;
+    
+    animation-timing-function: linear;
+    animation-fill-mode: forwards;
+    transition: all 50ms ease-in;
+}
+
+.MoreInfoButton:hover > h3{
+    display: block;
+    animation-name: text;
+    animation-duration: 0.3s;
+    animation-timing-function: linear;
+    animation-fill-mode: forwards;
+    transition: all .2s ease-in;
+}
+
+.price{
+    position: absolute;
+    top: 5px;
+    right: 22px;
+    color: black;
+    overflow: hidden;
+    z-index: 999;
+    font-size: 30px;
+    font-family: 'Work Sans', sans-serif;
+    background: linear-gradient(to left, rgb(200, 0, 231) 50%, rgb(100, 46, 46) 50%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    background-size: 200% 100%;
+    background-position: -200% 100%;
+    transition: background-position 500ms ease;
+}
+div>.MoreInfoButton:hover~.price{
+    animation-name: PriceAnimation;
+    animation-duration: 1.8s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    
+}
+
+@keyframes PriceAnimation {
+    0%{
+        background-position: 0 100%;
+    }
+    50%{
+        background-position: -100% 200%;
+    }
+    75%{
+        background-position: -150% 200%;
+    }
+    100%{
+        background-position: -200% 200%;
+    }
+}
+
+@keyframes stringStart {
+    0%{
+        transform: translateX(25px);
+    }
+    50%{
+        transform: translateX(3px);
+    }
+    100%{
+        transform: translateX(3px);
+    }
+}
+
+
+
+@keyframes text {
+    0%{
+        transform: translateX(0px);
+    }
+    50%{
+        transform: translateX(-2px);
+    }
+    100%{
+        transform: translateX(-2px);
+        
+    }
+}
+
+
+.oof{
+    width:100%;
+    height:25%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+    object-fit: fill;
+    border-radius: 40px;
+    display: none;
+    border: 2px solid rgb(131, 131, 131)
+}
+
+.invisible{
+    color: rgba(0, 0, 0, 0);
+}
+
+.Info{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    vertical-align: middle;
+}
+
+
+.divforcate{
+    width: 15.1vw;
+    height: 45vh;
+    position: fixed;
+    left: 4vw;
+    top: 14vh;
+    border-top: 3px solid black;
+    border-left: 3px solid black;
+    border-bottom: 3px solid black;
+    background-color: #CEB01D;
+    border-top-right-radius: 5;
+    border-top-left-radius: 25px;
+    border-bottom-left-radius: 25px;
+}
+
+
+.categories{
+    display: flex;
+    flex-wrap: nowrap;
+    position: fixed;
+    margin-bottom: 20px;
+    width: 13vw;
+    height: 70px;
+    font-size: 17px;
+    border-radius: 15px;
+    z-index: 10000;
+    justify-content: center;
+    align-items: center;
+    background-color: #a6865e;
+    letter-spacing: 2px;
+    color: bisque;
+    text-transform: uppercase;
+}
+
+
+.colddishes{
+    left: 5.5%;
+    top: 17%;
+    font-size: 16px;
+}
+
+.hotdishes{
+    left: 5.5%;
+    top: 27%;
+}
+
+.soups{
+    left: 5.5%;
+    top: 37%;
+}
+
+.meat{
+    left: 5.5%;
+    top: 47%;
+}
