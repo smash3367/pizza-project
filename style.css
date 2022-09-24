@@ -1,0 +1,998 @@
+header{
+    background-color: rgb(30, 30, 30);
+    position: fixed;
+    top: 5px;
+    left: 7px;
+    width: 1425px;
+    margin: 0 0 0 0;
+    border-radius: 5px;
+    position: fixed;
+    z-index: 1001;
+}
+
+header > h1{
+    color: white;
+}
+
+footer{
+    background-color: rgb(30, 30, 30);
+    width: 99.5%;
+    height: 400px;
+    top: 1700px;
+    bottom: 0;
+    position: absolute;
+    border: 2px solid rgb(70, 70, 70);
+}
+
+footer > h1{
+    color: rgb(230, 230, 230);
+    position: absolute;
+    top: 150px;
+    left: 650px;
+    font-size: 40px;
+}
+
+
+/* footer text */
+.year{
+    position: absolute;
+    top: 320px;
+    left: 20px;
+    color: rgb(230, 230, 230)
+}
+
+.privet{
+    position: absolute;
+    top: 333px;
+    left: 1300px;
+    color: rgb(230, 230, 230);
+}
+
+.pon{
+    position: absolute;
+    top: 333px;
+    left: 1390px;
+    color: rgb(230, 230, 230);
+}
+
+/* [ footer text ] upper */
+
+/* selected page (header) */
+.selected{
+    display: flex;
+    justify-content: center;
+}
+/* [ selected page (header) ] upper */
+
+/* settings button */
+.settings{
+    font-size: 8px;
+    position:absolute;
+    left: 13px;
+    top: 13px;
+    color: white;
+    font-weight: bold;
+    
+    text-align: center;
+    background-color: rgba(200, 200, 200, 0);
+    background-size: 100% 1em;
+    cursor: pointer;
+    border-radius: 100px;
+    height: 50px;
+    width: 50px;
+    box-shadow: 0px 0px 0px 0px rgba(200, 200, 200, 0);
+    transition: box-shadow 1s linear;
+    margin: 0.5em;
+}
+
+.settings:active{
+    box-shadow: 0px 0px 0px 3px rgba(170, 170, 170, 0.5);
+    background-color: rgba(170, 170, 170, 0.5);
+    transition:
+        background-color 0.01s,
+        box-shadow 0.1s linear;
+}
+
+.settings:hover{
+    cursor: pointer;
+}
+
+.SettingsText{
+    position: absolute;
+    left: 13px;
+}
+/* [ settings button ] upper */
+
+/* settings button animate */
+
+.settings-content {
+    display: block;
+    position: absolute;
+    background-color: #feeee5;
+    min-width: 205px;
+    top: 55px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 999;
+    border-radius: 10px;
+    transition: all .3s ease-in;
+}
+
+.settings-content .OtherA {
+    float: none;
+    color: #9e4446;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+    border-top: 1px solid rgb(201, 201, 201);
+    font-size: 15px;
+    border-start-end-radius: 10px;
+    transition: all;
+}
+
+.settings-content .MobileA {
+    float: none;
+    color: #9e4446;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+    font-size: 15px;
+    transition: all;
+}
+
+.settings-content a:hover {
+    background-color: #ddd;
+    border-radius: 10px;
+    transition: all;
+}
+
+.show {
+    display: block;
+}
+.SettingsText{
+position: absolute;
+left: 6px;
+top: 6px;
+font-size: 8px;
+background-color: rgba(0,0,0,0);
+color: white;
+border: 0;
+}
+
+.SettingsAnimEnd{
+    transform: translateX(1px);
+    transition: all .2s ease-in;
+    
+}
+
+.SettingsAnimStart{
+    transform: translateX(-500px);
+    transition: all .2s ease-in;
+}
+
+.SettingsLeftAnimStart{
+    animation: SettingsLeftAnimKeyframeStart .5s ease-in;
+    animation-fill-mode: forwards;
+}
+
+.SettingsLeftAnimEnd{
+    animation: SettingsLeftAnimKeyframeEnd .5s ease-in;
+    animation-fill-mode: forwards;
+}
+@keyframes SettingsLeftAnimKeyframeStart {
+    0%{
+        transform: rotate(0deg);
+    }
+    50%{
+        transform: rotate(90deg);
+        left: 8px;
+        top: 8px;
+    }
+    55%{
+        transform: rotate(95deg);
+        left: 8px;
+        top: 8px;
+    }
+    60%{
+        transform: rotate(90deg);
+        left: 8px;
+        top: 8px;
+    }
+    100%{
+        transform: rotate(90deg);
+        left: 8px;
+        top: 8px;
+    }
+}
+
+@keyframes SettingsLeftAnimKeyframeEnd{
+    0%{
+        transform: rotate(90deg);
+        left: 8px;
+        top: 8px;
+    }
+    40%{
+        transform: rotate(0deg);
+        left: 6px;
+        top: 6px;
+    }
+    55%{
+        transform: rotate(-5deg);
+    }
+    60%{
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(0deg);
+    }
+}
+/* [ settings button animate ] upper */
+
+.name{
+    position: fixed;
+    top: 7px;
+    left: 80px;
+}
+
+body{
+    height: 1900px;
+    margin: 200px 0 0 0;
+    background-image: url("BackImg.png");
+    background-repeat: no-repeat;
+    background-size: 200% 100%;
+    background-color: rgb(30, 30, 30);
+}
+/* a buttons (header) */
+.Statia{
+    right: 50px;
+    top: 35px;
+    position: fixed;
+    color: white;
+    font-size: 20px;
+    text-decoration: None;
+    background: 
+        linear-gradient(to right, rgba(100, 200, 200, 1), rgba(100, 200, 200, 1)),
+        linear-gradient(to right, rgba(255, 0, 0, 1), rgba(255, 0, 180, 1), rgba(0, 100, 200, 1));
+    background-size: 100% 0.1em, 0 0.1em;
+    background-position: 100% 100%, 0 100%;
+    background-repeat: no-repeat;
+    transition: background-size 1000ms;
+}
+
+.Statia:hover,
+.Statia:focus{
+    background-size: 0 0.1em, 100% 0.1em;
+}
+
+.Zakaz{
+    right: 200px;
+    top: 35px;
+    position: fixed;
+    color: white;
+    font-size: 20px;
+    text-decoration: None;
+    background:
+        linear-gradient(to right, rgba(100, 200, 200, 1), rgba(100, 200, 200, 1)),
+        linear-gradient(to right, rgba(100, 200, 200, 1), rgba(100, 200, 200, 1)),
+        linear-gradient(to right, rgba(255, 0, 0, 1), rgba(255, 0, 180, 1), rgba(0, 100, 200, 1));
+    background-size: 50% 0.1em, 50% 0.1em, 0 0.1em;
+    background-position: 100% 100%, 0 100%, 50% 100%;
+    background-repeat: no-repeat;
+    transition: background-size 1000ms;
+}
+.Zakaz:hover,
+.Zakaz:focus{
+    background-size: 0 0.1em, 0 0.1em, 100% 0.1em;
+}
+
+.koment{
+    right: 400px;
+    top: 35px;
+    position: fixed;
+    color: white;
+    font-size: 10px;
+    text-decoration: None;
+    background:
+        linear-gradient(to right, rgba(100, 200, 200, 1), rgba(100, 200, 200, 1)),
+        linear-gradient(to right, rgba(100, 200, 200, 1), rgba(100, 200, 200, 1)),
+        linear-gradient(to right, rgba(255, 0, 0, 1), rgba(255, 0, 180, 1), rgba(0, 100, 200, 1));
+    background-size: 50% 0.1em, 50% 0.1em, 0 0.1em;
+    background-position: 100% 100%, 0 100%, 50% 100%;
+    background-repeat: no-repeat;
+    transition: background-size 1000ms;
+}
+.koment:hover,
+.koment:focus{
+    background-size: 0 0.1em, 0 0.1em, 100% 0.1em;
+    top: 60px;
+}
+/* [a buttons (header)] upper */
+
+/* Text bottomer than pizza images */
+.smalltext{
+    display: none;
+}
+
+.DownText{
+    color: white;
+    width: 270px;
+    height: 60px;
+    border-radius: 40px;
+    background-color: rgb(30, 30, 30);
+    font-size: 13px;
+    z-index: 10;
+    transition: font-size 500ms;
+}
+.DownText:hover,
+.DownText:focus{
+    font-size: 15px;
+}
+
+.DownTextBig{
+    color: white;
+    width: 270px;
+    height: 60px;
+    border-radius: 40px;
+    background-color: rgb(30, 30, 30);
+    font-size: 12px;
+    z-index: 10;
+    transition: font-size 500ms;
+}
+.DownTextBig:hover,
+.DownTextBig:focus{
+    font-size: 14px;
+}
+/* [Text bottomer than pizza images] upper */
+
+/* */
+.FourCheese{
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    position: absolute;
+    left: 100px;
+    background-color: rgb(230, 230, 230);
+    width: 270px;
+    height: 300px;
+    border-radius: 50px;
+    background-image: url("sources/4sira.png");
+    background-size: 100% 80%;
+    background-repeat: no-repeat;
+    color: rgba(0, 0, 0, 0);
+    border: 2px solid rgb(131, 131, 131);
+    transition: all 500ms;
+}
+.FourCheese:hover{
+    top: 180px;
+    left: 75px;
+    width: 330px;
+    height: 360px;
+    z-index: 999;
+}
+.FourCheese:hover .smalltext{
+    display: flex;
+    justify-content: center;
+    font-size: 15px;
+}
+.FourCheese:hover .DownText{
+    width: 330px;
+    height: 80px;
+}
+
+.VegetarianSGribami{
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    position: absolute;
+    left: 420px;
+    background-color: rgb(230, 230, 230);
+    width: 270px;
+    height: 300px;
+    border-radius: 50px;
+    background-image: url("sources/VegetarianSGribami.png");
+    background-size: 100% 80%;
+    background-repeat: no-repeat;
+    color: rgba(0, 0, 0, 0);
+    border: 2px solid rgb(131, 131, 131);
+    transition: all 500ms;
+}
+.VegetarianSGribami:hover{
+    top: 180px;
+    left: 395px;
+    width: 330px;
+    height: 360px;
+    z-index: 999;
+}
+.VegetarianSGribami:hover .smalltext{
+    display: flex;
+    justify-content: center;
+    font-size: 13px;
+}
+.VegetarianSGribami:hover .DownTextBig{
+    width: 330px;
+    height: 80px;
+}
+
+.SirnaPomidornaya{
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    position: absolute;
+    left: 740px;
+    background-color: rgb(230, 230, 230);
+    width: 270px;
+    height: 300px;
+    border-radius: 50px;
+    background-image: url("sources/SirnaPomidornaya.png");
+    background-size: 100% 80%;
+    background-repeat: no-repeat;
+    color: rgba(0, 0, 0, 0);
+    border: 2px solid rgb(131, 131, 131);
+    transition: all 500ms;
+}
+.SirnaPomidornaya:hover{
+    top: 180px;
+    left: 715px;
+    width: 330px;
+    height: 360px;
+    z-index: 999;
+}
+.SirnaPomidornaya:hover .smalltext{
+    display: flex;
+    justify-content: center;
+    font-size: 15px;
+}
+.SirnaPomidornaya:hover .DownText{
+    width: 330px;
+    height: 80px;
+}
+
+.Suprim{
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    position: absolute;
+    left: 1060px;
+    background-color: rgb(230, 230, 230);
+    width: 270px;
+    height: 300px;
+    border-radius: 50px;
+    background-image: url("sources/Suprim.png");
+    background-size: 100% 80%;
+    background-repeat: no-repeat;
+    color: rgba(0, 0, 0, 0);
+    border: 2px solid rgb(131, 131, 131);
+    transition: all 500ms;
+}
+.Suprim:hover{
+    top: 180px;
+    left: 1035px;
+    width: 330px;
+    height: 360px;
+    z-index: 999;
+}
+.Suprim:hover .smalltext{
+    display: flex;
+    justify-content: center;
+    font-size: 15px;
+}
+.Suprim:hover .DownText{
+    width: 330px;
+    height: 80px;
+}
+
+.Siciliyskaya{
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    position: absolute;
+    left: 100px;
+    top: 550px;
+    background-color: rgb(230, 230, 230);
+    width: 270px;
+    height: 300px;
+    border-radius: 50px;
+    background-image: url("sources/Siciliyskaya.png");
+    background-size: 100% 80%;
+    background-repeat: no-repeat;
+    color: rgba(0, 0, 0, 0);
+    border: 2px solid rgb(131, 131, 131);
+    transition: all 500ms;
+}
+.Siciliyskaya:hover{
+    top: 530px;
+    left: 75px;
+    width: 330px;
+    height: 360px;
+    z-index: 999;
+}
+.Siciliyskaya:hover .smalltext{
+    display: flex;
+    justify-content: center;
+    font-size: 15px;
+}
+.Siciliyskaya:hover .DownText{
+    width: 330px;
+    height: 80px;
+    background-image: url("MinecraftBackImg.png");
+    background-size: 100%;
+}
+
+.FiveCheese{
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    position: absolute;
+    left: 420px;
+    top: 550px;
+    background-color: rgb(230, 230, 230);
+    width: 270px;
+    height: 300px;
+    border-radius: 50px;
+    background-image: url("sources/5Sirov.png");
+    background-size: 100% 80%;
+    background-repeat: no-repeat;
+    color: rgba(0, 0, 0, 0);
+    border: 2px solid rgb(131, 131, 131);
+    transition: all 500ms;
+}
+.FiveCheese:hover{
+    top: 530px;
+    left: 395px;
+    width: 330px;
+    height: 360px;
+    z-index: 999;
+}
+.FiveCheese:hover .smalltext{
+    display: flex;
+    justify-content: center;
+    font-size: 15px;
+}
+.FiveCheese:hover .DownText{
+    width: 330px;
+    height: 80px;
+}
+
+.Miasnaya{
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    position: absolute;
+    left: 740px;
+    top: 550px;
+    background-color: rgb(230, 230, 230);
+    width: 270px;
+    height: 300px;
+    border-radius: 50px;
+    background-image: url("sources/Miasnaya.png");
+    background-size: 100% 80%;
+    background-repeat: no-repeat;
+    color: rgba(0, 0, 0, 0);
+    border: 2px solid rgb(131, 131, 131);
+    transition: all 500ms;
+}
+.Miasnaya:hover{
+    top: 530px;
+    left: 715px;
+    width: 330px;
+    height: 360px;
+    z-index: 999;
+}
+.Miasnaya:hover .smalltext{
+    display: flex;
+    justify-content: center;
+    font-size: 15px;
+}
+.Miasnaya:hover .DownText{
+    width: 330px;
+    height: 80px;
+}
+
+.Assorti{
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    position: absolute;
+    left: 1060px;
+    top: 550px;
+    background-color: rgb(230, 230, 230);
+    width: 270px;
+    height: 300px;
+    border-radius: 50px;
+    background-image: url("sources/assorti.png");
+    background-size: 100% 80%;
+    background-repeat: no-repeat;
+    color: rgba(0, 0, 0, 0);
+    border: 2px solid rgb(131, 131, 131);
+    transition: all 500ms;
+}
+.Assorti:hover{
+    top: 530px;
+    left: 1035px;
+    width: 330px;
+    height: 360px;
+    z-index: 999;
+}
+.Assorti:hover .smalltext{
+    display: flex;
+    justify-content: center;
+    font-size: 15px;
+}
+.Assorti:hover .DownText{
+    width: 330px;
+    height: 80px;
+}
+
+.Pepperoni{
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    position: absolute;
+    left: 100px;
+    top: 900px;
+    background-color: rgb(230, 230, 230);
+    width: 270px;
+    height: 300px;
+    border-radius: 50px;
+    background-image: url("sources/Pepperoni.png");
+    background-size: 100% 80%;
+    background-repeat: no-repeat;
+    color: rgba(0, 0, 0, 0);
+    border: 2px solid rgb(131, 131, 131);
+    transition: all 500ms;
+    
+}
+.Pepperoni:hover{
+    top: 880px;
+    left: 75px;
+    width: 330px;
+    height: 360px;
+    z-index: 999;
+}
+.Pepperoni:hover .smalltext{
+    display: flex;
+    justify-content: center;
+    font-size: 15px;
+}
+.Pepperoni:hover .DownText{
+    width: 330px;
+    height: 80px;
+}
+
+
+.Pomidornaya{
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    position: absolute;
+    left: 420px;
+    top: 900px;
+    background-color: rgb(230, 230, 230);
+    width: 270px;
+    height: 300px;
+    border-radius: 50px;
+    background-image: url("sources/Pomidornaya.png");
+    background-size: 100% 80%;
+    background-repeat: no-repeat;
+    color: rgba(0, 0, 0, 0);
+    border: 2px solid rgb(131, 131, 131);
+    transition: all 500ms;
+    
+}
+
+.Pomidornaya:hover{
+    top: 880px;
+    left: 415px;
+    width: 330px;
+    height: 360px;
+    z-index: 999;
+}
+
+.Pomidornaya:hover .smalltext{
+    display: flex;
+    justify-content: center;
+    font-size: 15px;
+}
+
+.Pomidornaya:hover .DownText{
+    width: 330px;
+    height: 80px;
+    color: rgb(117, 117, 117);
+}
+
+.oof{
+    width:100%;
+    height:25%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+    object-fit: fill;
+    border-radius: 40px;
+    display: none;
+    border: 2px solid rgb(131, 131, 131)
+}
+.Pomidornaya:hover .oof{
+    display: flex;
+}
+
+.Noepoletanskaya{
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    position: absolute;
+    left: 740px;
+    top: 900px;
+    background-color: rgb(230, 230, 230);
+    width: 270px;
+    height: 300px;
+    border-radius: 50px;
+    background-image: url("sources/Noepoletanskaya.png");
+    background-size: 100% 80%;
+    background-repeat: no-repeat;
+    color: rgba(0, 0, 0, 0);
+    border: 2px solid rgb(131, 131, 131);
+    transition: all 500ms;
+    
+}
+.Noepoletanskaya:hover{
+    top: 880px;
+    left: 715px;
+    width: 330px;
+    height: 360px;
+    z-index: 999;
+}
+.Noepoletanskaya:hover .smalltext{
+    display: flex;
+    justify-content: center;
+    font-size: 15px;
+}
+.Noepoletanskaya:hover .DownText{
+    width: 330px;
+    height: 80px;
+}
+
+.Calcone{
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    position: absolute;
+    left: 1060px;
+    top: 900px;
+    background-color: rgb(230, 230, 230);
+    width: 270px;
+    height: 300px;
+    border-radius: 50px;
+    background-image: url("sources/Calcone.png");
+    background-size: 100% 80%;
+    background-repeat: no-repeat;
+    color: rgba(0, 0, 0, 0);
+    border: 2px solid rgb(131, 131, 131);
+    transition: all 500ms;
+    
+}
+.Calcone:hover{
+    top: 880px;
+    left: 1035px;
+    width: 330px;
+    height: 360px;
+    z-index: 999;
+}
+.Calcone:hover .smalltext{
+    display: flex;
+    justify-content: center;
+    font-size: 15px;
+}
+.Calcone:hover .DownText{
+    width: 330px;
+    height: 80px;
+}
+
+.Belaiya{
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    position: absolute;
+    left: 100px;
+    top: 1230px;
+    background-color: rgb(230, 230, 230);
+    width: 270px;
+    height: 300px;
+    border-radius: 50px;
+    background-image: url("sources/Belaiya.png");
+    background-size: 100% 80%;
+    background-repeat: no-repeat;
+    color: rgba(0, 0, 0, 0);
+    border: 2px solid rgb(131, 131, 131);
+    transition: all 500ms;
+    
+}
+.Belaiya:hover{
+    top: 1210px;
+    left: 75px;
+    width: 330px;
+    height: 360px;
+    z-index: 999;
+}
+.Belaiya:hover .smalltext{
+    display: flex;
+    justify-content: center;
+    font-size: 15px;
+}
+.Belaiya:hover .DownText{
+    width: 330px;
+    height: 80px;
+}
+
+.Margarita{
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    position: absolute;
+    left: 420px;
+    top: 1230px;
+    background-color: rgb(230, 230, 230);
+    width: 270px;
+    height: 300px;
+    border-radius: 50px;
+    background-image: url("sources/Margarita.png");
+    background-size: 100% 80%;
+    background-repeat: no-repeat;
+    color: rgba(0, 0, 0, 0);
+    border: 2px solid rgb(131, 131, 131);
+    transition: all 500ms;
+}
+.Margarita:hover{
+    top: 1210px;
+    left: 395px;
+    width: 330px;
+    height: 360px;
+    z-index: 999;
+}
+.Margarita:hover .smalltext{
+    display: flex;
+    justify-content: center;
+    font-size: 15px;
+}
+.Margarita:hover .DownText{
+    width: 330px;
+    height: 80px;
+}
+
+.Vegetarian{
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    position: absolute;
+    left: 740px;
+    top: 1230px;
+    background-color: rgb(230, 230, 230);
+    width: 270px;
+    height: 300px;
+    border-radius: 50px;
+    background-image: url("sources/Vegetarian.png");
+    background-size: 100% 80%;
+    background-repeat: no-repeat;
+    color: rgba(0, 0, 0, 0);
+    border: 2px solid rgb(131, 131, 131);
+    transition: all 500ms;
+    
+}
+.Vegetarian:hover{
+    top: 1210px;
+    left: 715px;
+    width: 330px;
+    height: 360px;
+    z-index: 999;
+}
+.Vegetarian:hover .smalltext{
+    display: flex;
+    justify-content: center;
+    font-size: 15px;
+}
+.Vegetarian:hover .DownText{
+    width: 330px;
+    height: 80px;
+}
+
+.MorskoiKoktel{
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    position: absolute;
+    left: 1060px;
+    top: 1230px;
+    background-color: rgb(230, 230, 230);
+    width: 270px;
+    height: 300px;
+    border-radius: 50px;
+    background-image: url("sources/MorskoiKoktel.png");
+    background-size: 100% 80%;
+    background-repeat: no-repeat;
+    color: rgba(0, 0, 0, 0);
+    border: 2px solid rgb(131, 131, 131);
+    transition: all 500ms;
+    
+}
+.MorskoiKoktel:hover{
+    top: 1210px;
+    left: 1035px;
+    width: 330px;
+    height: 360px;
+    z-index: 999;
+}
+.MorskoiKoktel:hover .smalltext{
+    display: flex;
+    justify-content: center;
+    font-size: 15px;
+}
+.MorskoiKoktel:hover .DownText{
+    width: 330px;
+    height: 80px;
+}
+
+.invisible{
+    color: rgba(0, 0, 0, 0);
+}
+
+.Info{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    vertical-align: middle;
+}
+
+
+.earthimage{
+    background-color: blueviolet;
+    z-index: 100;
+    width: 460px;
+    height: 460px;
+    border-radius: 50%;
+    position: absolute;
+    left: 65px;
+    top: 135px;
+    background-image: url(sources/earth.png);
+    background-size: 120% 132%;
+    background-position: center;
+    animation: animateEarth 25s linear infinite;
+}
+@keyframes animateEarth{
+    0%{
+        transform: rotate(360deg);
+    }
+    100%{
+        transform: rotate(0deg);
+    }
+}
+
+.text{
+    position: absolute;
+    width: 590px;
+    height: 590px;
+    border-radius: 50%;
+    /*background-color: #ccc;*/
+    animation: animateText 12.5s linear infinite;
+    z-index: 110;
+}
+@keyframes animateText{
+    0%{
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+}
+
+.text b {
+    position: absolute;
+    display: block;
+    left: 50%;
+    transform-origin: 0 270px;
+    font-size: 2.8em;
+    color: bisque;
+    padding: 7px;
+    z-index: 110;
+}

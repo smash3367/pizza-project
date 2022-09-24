@@ -1,0 +1,220 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"https://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <title>Появление действия при нажатии на флажок (checkbox) появляется скрытое содержание (bloggood.ru)</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <style>
+        body{
+            z-index: 100 !important;
+        }
+
+        main{
+            z-index: 100 !important;
+        }
+
+        .div{
+            background-color: antiquewhite;
+            width: 500px;
+            height: 333px;
+            left: 333px;
+            position: relative;
+        }
+        
+        .anim{
+            animation-name: FLAGANIM;
+            animation-duration: 1.2s;
+            animation-timing-function: linear;
+            animation-fill-mode: forwards;
+            transition: all .2s ease-in;
+            background-color: #bc8714
+        }
+
+        @keyframes FLAGANIM {
+            1%{
+                z-index: 101;
+            }
+            10%{
+                transform: translateX(-70px);
+            }
+            30%{
+                transform: translateX(-50px);
+            }
+            50%{
+                transform: translateX(-40px);
+            }
+            70%{
+                transform: translateX(-30px);
+            }
+            90%{
+                transform: translateX(0px);
+            }
+            95%{
+                transform: translateX(10px);
+            }
+            100%{
+                transform: translateX(0px);
+            }
+        }
+
+        @keyframes FlagShowedT{
+            1%{
+                transform: translateX(0);
+            }
+            100%{
+                transform: translateX(100px);
+            }
+        }
+        
+        .FlagShowed{
+            animation-name: FlagShowed;
+            animation-duration: 1.2s;
+            animation-fill-mode: both;
+            
+            transform: translateX(135px);
+            transition: all 1.2s ease-in-out;
+        }
+        
+        @keyframes FlagHiddenT{
+            1%{
+                transform: translateX(100px);
+            }
+            100%{
+                transform: translateX(0);
+            }
+        }  
+        
+        .FlagHidden{
+            animation-name: FlagHidden;
+            animation-duration: 1.2s;
+            animation-fill-mode: both;
+            transform: translateX(0);
+            transition: all 1.2s ease-in-out;
+        }
+        
+        
+        
+        .flag1{
+            background-color: bisque;
+            width: 100px;
+            height: 25px;
+            z-index: 1 !important;
+            position: absolute;
+            left: -125px;
+            top: 510px;
+        }
+        
+        .flag2{
+            background-color: red;
+            width: 100px;
+            height: 25px;
+            z-index: 1 !important;
+            position: absolute;
+            left: -125px;
+            top: 540px;
+        }
+        
+        .flag3{
+            background-color: rebeccapurple;
+            width: 100px;
+            height: 25px;
+            z-index: 1 !important;
+            position: absolute;
+            left: -125px;
+            top: 570px;
+        }
+        
+        .flag4{
+            background-color: sienna;
+            width: 100px;
+            height: 25px;
+            z-index: 1 !important;
+            position: absolute;
+            left: -125px;
+            top: 599px;
+        }
+
+        .block{
+            background-color: rgb(43, 154, 100);
+            z-index: 2 !important;
+            width: 600px;
+            height: 300px;
+            top: 80px;
+            left: 180px;
+            position: absolute;
+        }
+        
+        .bigblock{
+            background-color:rgb(152, 170, 161);
+            z-index: 3 !important;
+            width: 900px;
+            height: 600px;
+            top: 333px;
+            position: relative;
+        }
+        
+        
+    </style>
+    <script src="/assets/js/jquery-3.5.1.min.js"></script>
+    <script type="text/javascript">
+        function showOrHide(bloggood, cat) {
+            bloggood = document.getElementById(bloggood);
+            cat = document.getElementById(cat);
+            flag = document.getElementById(flag);
+            if (bloggood.checked) cat.style.display = "block" ;
+            else cat.style.display = "none";
+
+            if (bloggood.checked) flag.classList.toggle("gOincenter");
+            else flag.classList.remove("");
+        }
+        
+        function showmark(flag, variant) {
+            flag = document.getElementById(flag);
+            variant = document.getElementById(variant);
+            if (variant.checked) {
+                flag.classList.remove("FlagHidden");
+                flag.classList.toggle("FlagShowed");
+            }
+            
+            else {
+                flag.classList.remove("FlagShowed");
+                flag.classList.toggle("FlagHidden");
+            }
+            
+        }
+
+    </script>
+</head>
+<body>
+    <form>
+        <input type="text" name="Name" placeholder="Name" style="display: flex; flex-wrap: wrap; margin: 0 0 10px 0;" required/>
+        <input type="text" name="Second Name" placeholder="Second Name" style="display: flex; flex-wrap: wrap; margin: 0 0 10px 0;" required/>
+        <input type="text" name="Age" placeholder="Age" style="display: flex; flex-wrap: wrap; margin: 0 0 10px 0;" required/>
+        <button type="submit">Отправить</button>
+    </form>
+
+    <div class = "div">
+        <input type = 'checkbox' id = 'variant1' onchange = 'showmark("flag1", "variant1");'/>
+        <label for ="variant1">Показать содержимое категории 1</label>
+        <br>
+        <input type = 'checkbox' id = 'variant2' onchange = 'showmark("flag2", "variant2");'/>
+        <label for ="variant2">Показать содержимое категории 2</label>
+        <br>
+        <input type = 'checkbox' id = 'variant3' onchange = 'showmark("flag3", "variant3");'/>
+        <label for ="variant3">Показать содержимое категории 3</label>
+        <br>
+        <input type = 'checkbox' id = 'variant4' onchange = 'showmark("flag4", "variant4");'/>
+        <label for ="variant4">Показать содержимое категории 4</label>
+        <br>
+        <div class = "bigblock">
+            <div class = "block">
+                
+            </div>
+        </div>
+        <div class = "flag1" id="flag1">.</div>
+        <div class = "flag2" id="flag2">.</div>
+        <div class = "flag3" id="flag3">.</div>
+        <div class = "flag4" id="flag4">.</div>
+    </div>
+</body>
+</html>

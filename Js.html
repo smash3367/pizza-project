@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300&family=Work+Sans&display=swap');
+        /* fonts in usage font-family: 'Inter', sans-serif;
+        */
+        .img{
+            position: absolute;
+            background-image: url("pon.png");
+            width: 933px;
+            height: 500px;
+            left: 200px;
+            background-size: 100% 100%;
+        }
+
+        .text{
+            animation-name: ponanim;
+            animation-duration: 2s;
+            animation-fill-mode: both;
+            color:white;
+            fill: white;
+            -webkit-text-stroke: black;
+            -webkit-text-stroke-width: 7px;
+            stroke-linejoin: round;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start !important;
+            font-family: 'Work Sans', sans-serif; 
+        }
+
+        @keyframes ponanim {
+            0%{
+                font-size: 300px;
+                align-items: flex-start;
+                transform: translateY(-200px);
+            }
+            100%{
+                font-size: 100px;
+                align-items: flex-start;
+                transform: translateY(300px);
+            }
+        }
+
+        .more{
+            padding: 25px 39px;
+            background-color:orange;
+            position:absolute;
+            left:333px;
+            top:595px;
+            transition:all .3s linear;
+            border-radius:10px;
+            border: 1px solid rgba(0, 0, 0, 0);
+        }
+
+        .more:hover{
+            border: 3px solid rgb(228, 148, 0);
+        }
+        
+    </style>
+    
+</head>
+<body>
+    <main>
+        
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+        <button type=button class=check>check values</button><br>
+        <input name="other1" value="val2, val5" type="text">
+        <div class = "img">
+            <h1 class = "text">ольга может.</h1>
+        </div>
+        <div class = "more">Привет</div>
+        <nav>
+            <a href="App.svelte" style="color: red;">Привет</a>
+        </nav>
+    </main>
+    <script>
+        $(document).ready(function() {
+
+            // Добавляем значения
+            var val_data = {
+                "val1": "Значение 1",
+                "val2": "Значение 2",
+                "val3": "Значение 3",
+                "val4": "Значение 4",
+                "val5": "Значение 5"
+            };
+        
+            var input = $('[name="other1"]');
+        
+            // Создаем общий блок с классом
+            var val_cont = document.createElement('div');
+            $(val_cont).addClass("dropdown");
+        
+            // Создаем кнопку открытия списка и поле для записи значений
+            $(val_cont).append("<a href='javascript:void(0);'><span class='open'>Выбрать значение</span><span class='value'></span></a>");
+        
+            // Создаем выпдающий список и вкладываем в общий блок
+            var ul = document.createElement('ul');
+        
+            for (elem in val_data) {
+            $(ul).append("<li><input type='checkbox' value='" + elem + "' id='" + elem + "'><label for='" + elem + "'>" + val_data[elem] + "</label></li>");
+            }
+            $(ul).appendTo(val_cont);
+            $(ul).hide();
+        
+            // Размещаем общий блок после нужного input-а
+            $(input).after(val_cont);
+        
+            // Скрываем/открываем выпадающий список
+            $(".dropdown a").on('click', function() {
+            $(".dropdown ul").slideToggle('fast');
+            });
+        
+            $('.dropdown ul input[type="checkbox"]').on('click', function() {
+            var inputValue, innerObj = {};
+            
+            /* проверяем value текстового инпута. это необходимо для очистки
+                от лишних запятых при удалении всех элементов и накликивания
+                чекбоксов заново. если эту проверку не делать, то пустой инпут
+                добавляется как пустой элемент массива */
+            if(input.val()) { 
+                /* если инпут не пустой, то закидываем данные из него в массив
+                по разделителю ", " */
+                inputValue = input.val().split(', ')
+            } else {
+                inputValue = []; // если пустой - присваиваем переменно пустой массив
+            };
+            
+            /* промежуточный объект нам необходим для составления массива
+                только с уникальными элементами */
+            inputValue.forEach(function(item) {
+                innerObj[item] = true;
+            });
+            
+            /* если чекбокс активен — добавляем его value как ключ к объекту, 
+                а если нет — удаляем этот ключ */
+            if ($(this).is(':checked')) {
+                innerObj[$(this).val()] = true;
+            } else {
+                delete innerObj[$(this).val()];
+            }
+            
+            inputValue = Object.keys(innerObj); // преобразуем ключи объекта в массив
+            input.val(inputValue.join(', ')); // преобразуем массив в строку, разделяя элементы ", " и записываем в value инпута
+                
+            /*var title_val = $(this).closest('.dropdown ul').find('input[type="checkbox"]').val(),
+                title = $(this).val() + ", ";
+        
+            if ($(this).is(':checked')) {
+                var html = '<span data-atr="' + title + '">' + title + '</span>';
+                $('.value').append(html);
+                $(".open").hide();
+            } else {
+                $('span[data-atr="' + title + '"]').remove();
+            }
+        
+            if ($('.value').text() == "") {
+                $(".open").show();
+                $(input).val("");
+            } else {
+                $(input).val($('.value').text());
+            }*/
+            });
+            
+            // новая функция
+        
+            $('.check').click(function() {
+            var valuesArray = input.val().split(', '), // собираем данные из инпута в массив, разделитель ", "
+                $checkboxes = $(ul).find('li input').removeClass('protected'); // удаляем со всех инпутов класс
+                
+            $.each(valuesArray, function(index, value) { // проходимся циклом по собранному массиву из инпутов
+                $checkboxes.each(function() { // для каждого значение запускаем цикл по всем чекбоксам
+                if ($(this).val() === value) { // и если value инпута равно элементу из собранного массива 
+                    $(this).prop('checked', true).addClass('protected'); // "чекаем" чекбокс и добавляем ему класс, чтобы на следующем условии чекбокс не стал обратно не выделенным
+        
+                    return true; // уходим на следующую итерацию
+                } else if ( !$(this).hasClass('protected') ) { // если у чекбокса нет класса protected
+                    $(this).prop('checked', false); // то снимаем выделение с чекбокса
+                }
+                });
+            });
+            });
+        });
+    </script>
+</body>
+</html>

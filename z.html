@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="description" content="На этом сайте вы можете почитать статьи про пиццу либо заказть её (нет)">
+    <meta charset="UTF-8">
+    <meta name="author" content="Лев">
+    <meta name="copyright" content="Лев">
+    <title>Пицца</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        #DownText{
+            color: white;
+            width: 270px;
+            height: 60px;
+            border-radius: 40px;
+            background-color: rgb(30, 30, 30);
+            font-size: 14px;
+            z-index: 10;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: font-size 500ms;
+        }
+        #DownText:hover,
+        #DownText:focus{
+            font-size: 18px;
+        }
+
+        #DownTextBig{
+            color: white;
+            width: 270px;
+            height: 60px;
+            border-radius: 40px;
+            background-color: rgb(30, 30, 30);
+            font-size: 13px;
+            z-index: 10;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: font-size 500ms;
+        }
+        #DownTextBig:hover,
+        #DownTextBig:focus{
+            font-size: 16px;
+        }
+
+        .FourCheese:hover #DownText{
+            width: 330px;
+            height: 80px;   
+        }
+        .VegetarianSGribami:hover #DownTextBig{
+            width: 330px;
+            height: 80px;
+        }
+        .SirnaPomidornaya:hover #DownText{
+            width: 330px;
+            height: 80px;
+        }
+        .Suprim:hover #DownText{
+            width: 330px;
+            height: 80px;
+        }
+        .Siciliyskaya:hover #DownText{
+            width: 330px;
+            height: 80px;
+        }
+        .FiveCheese:hover #DownText{
+            width: 330px;
+            height: 80px;
+        }
+        .Miasnaya:hover #DownText{
+            width: 330px;
+            height: 80px;
+        }
+        .Assorti:hover #DownText{
+            width: 330px;
+            height: 80px;
+        }
+        .Pepperoni:hover #DownText{
+            width: 330px;
+            height: 80px;
+        }
+        .Pomidornaya:hover #DownText{
+            width: 330px;
+            height: 80px;
+        }
+        .Noepoletanskaya:hover #DownText{
+            width: 330px;
+            height: 80px;
+        }
+        .Calcone:hover #DownText{
+            width: 330px;
+            height: 80px;
+        }
+        .Belaiya:hover #DownText{
+            width: 330px;
+            height: 80px;
+        }
+        .Margarita:hover #DownText{
+            width: 330px;
+            height: 80px;
+        }
+        .Vegetarian:hover #DownText{
+            width: 330px;
+            height: 80px;
+        }
+        .MorskoiKoktel:hover #DownText{
+            width: 330px;
+            height: 80px;
+        }
+
+    </style>
+</head>
+<body>
+    <header>
+        <div class = "settings" onclick="myFunction()">
+            <button class = "SettingsText" id = "SettingsText">______<br>______<br>______</button>
+            <div class="settings-content SettingsAnimStart" id="SettingsLinks">
+                <a class = "MobileA" href="pizzamobile.html">📱 Мобильная версия</a>
+                <a class = "OtherA" href="#">Link 2</a>
+                <a class = "OtherA" href="#">Link 3</a>
+            </div>
+        </div>
+        <h1 class = "selected">Заказать пиццу</h1>
+        <h1 class = "name">Пицца</h1>
+        <nav>
+            <a class = "Zakaz" href = "z.html">Заказать пиццу</a>
+            <a class = "Statia" href = "y.html">Статьи о пицце</a>
+            <a class = "koment" href = "index.html">Включить комментарии от автора</a>
+        </nav>
+    </header>
+    <main>
+        <a class = "FourCheese" href = "NoInternet.html">
+            .<br>.<br>.<br>.<br>.<br>.<br>.<br>.<br>.<br>.<br>.<br>.<br>.<br>.<br>.<br>.<br>.<br>.<br>.<br>.
+            <div id = "DownText">
+                <h2 class = "Info">4 Сыра</h2>
+            </div>
+        </a>
+        
+        <a class = "VegetarianSGribami" href = "NoInternet.html">
+            .<br>.<br>.<br>.<br>.<br>.<br>.<br>.<br>.<br>.<br>.<br>.<br>.<br>.<br>.<br>.<br>.<br>.<br>.<br>.
+            <div id = "DownTextBig">
+                <h2 class = "Info">Вегетарианская с Грибами</h2>
+            </div>
+        </a>
+        
+        <a class = "SirnaPomidornaya" href = "NoInternet.html">
+            .<br>.<br>.<br>.<br>.<br>.<br>.<br>.<br>.<br>.<br>.<br>.<br>.<br>.<br>.<br>.<br>.<br>.<br>.<br>.
+            <div id = "DownText">
+                <h2 class = "Info">Сырно Помидорная</h2>
+            </div>
+        </a>
+        
+        <a class = "Suprim" href = "NoInternet.html">
+            .<br>.<br>.<br>.<br>.<br>.<br>.<br>.<br>.<br>.<br>.<br>.<br>.<br>.<br>.<br>.<br>.<br>.<br>.<br>.
+            <div id = "DownText">
+                <h2 class = "Info">Суприм</h2>
+            </div>
+        </a>
+        
+        <a class = "Siciliyskaya" href = "NoInternet.html">
+            .<br>.<br>.<br>.<br>.<br>.<br>.<br>.<br>.<br>.<br>.<br>.<br>.<br>.<br>.<br>.<br>.<br>.<br>.<br>.
+            <div id = "DownText">
+                <h2 class = "Info">Сицилийская</h2>
+            </div>
+        </a>
+        
+        <a class = "FiveCheese" href = "NoInternet.html">
+            .<br>.<br>.<br>.<br>.<br>.<br>.<br>.<br>.<br>.<br>.<br>.<br>.<br>.<br>.<br>.<br>.<br>.<br>.<br>.
+            <div id = "DownText">
+                <h2 class = "Info">5 Сыров</h2>
+            </div>
+        </a>
+        
+        <a class = "Miasnaya" href = "NoInternet.html">
+            .<br>.<br>.<br>.<br>.<br>.<br>.<br>.<br>.<br>.<br>.<br>.<br>.<br>.<br>.<br>.<br>.<br>.<br>.<br>.
+            <div id = "DownText">
+                <h2 class = "Info">Мясная</h2>
+            </div>
+        </a>
+        
+        <a class = "Assorti" href = "NoInternet.html">
+            .<br>.<br>.<br>.<br>.<br>.<br>.<br>.<br>.<br>.<br>.<br>.<br>.<br>.<br>.<br>.<br>.<br>.<br>.<br>.
+            <div id = "DownText">
+                <h2 class = "Info">Ассорти</h2>
+            </div>
+        </a>
+        
+        <a class = "Pepperoni" href = "NoInternet.html">
+            .<br>.<br>.<br>.<br>.<br>.<br>.<br>.<br>.<br>.<br>.<br>.<br>.<br>.<br>.<br>.<br>.<br>.<br>.<br>.
+            <div id = "DownText">
+                <h2 class = "Info">Пепперони</h2>
+            </div>
+        </a>
+        
+        <a class = "Pomidornaya" href = "NoInternet.html">
+            .<br>.<br>.<br>.<br>.<br>.<br>.<br>.<br>.<br>.<br>.<br>.<br>.<br>.<br>.<br>.<br>.<br>.<br>.<br>.
+            <div id = "DownText">
+                <h2 class = "Info">Помидорная</h2>
+            </div>
+        </a>
+        
+        <a class = "Noepoletanskaya" href = "NoInternet.html">
+            .<br>.<br>.<br>.<br>.<br>.<br>.<br>.<br>.<br>.<br>.<br>.<br>.<br>.<br>.<br>.<br>.<br>.<br>.<br>.
+            <div id = "DownText">
+                <h2 class = "Info">Ноеполетанская</h2>
+            </div>
+        </a>
+        
+        <a class = "Calcone" href = "NoInternet.html">
+            .<br>.<br>.<br>.<br>.<br>.<br>.<br>.<br>.<br>.<br>.<br>.<br>.<br>.<br>.<br>.<br>.<br>.<br>.<br>.
+            <div id = "DownText">
+                <h2 class = "Info">Кальцоне</h2>
+            </div>
+        </a>
+        
+        <a class = "Belaiya" href = "NoInternet.html">
+            .<br>.<br>.<br>.<br>.<br>.<br>.<br>.<br>.<br>.<br>.<br>.<br>.<br>.<br>.<br>.<br>.<br>.<br>.<br>.
+            <div id = "DownText">
+                <h2 class = "Info">Белая</h2>
+            </div>
+        </a>
+        
+        <a class = "Margarita" href = "NoInternet.html">
+            .<br>.<br>.<br>.<br>.<br>.<br>.<br>.<br>.<br>.<br>.<br>.<br>.<br>.<br>.<br>.<br>.<br>.<br>.<br>.
+            <div id = "DownText">
+                <h2 class = "Info">Маргарита</h2>
+            </div>
+        </a>
+        
+        <a class = "Vegetarian" href = "NoInternet.html">
+            .<br>.<br>.<br>.<br>.<br>.<br>.<br>.<br>.<br>.<br>.<br>.<br>.<br>.<br>.<br>.<br>.<br>.<br>.<br>.
+            <div id = "DownText">
+                <h2 class = "Info">Вегетарианская</h2>
+            </div>
+        </a>
+        
+        <a class = "MorskoiKoktel" href = "NoInternet.html">
+            .<br>.<br>.<br>.<br>.<br>.<br>.<br>.<br>.<br>.<br>.<br>.<br>.<br>.<br>.<br>.<br>.<br>.<br>.<br>.
+            <div id = "DownText">
+                <h2 class = "Info">Морской Коктейль</h2>
+            </div>
+        </a>
+    </main>
+    <footer>
+        <h1>Пицца</h1>
+        <h2 class = "year">2022 - 2022</h2>
+        <h2 class = "privet">привет</h2>
+        <h2 class = "pon">®</h2>
+    </footer>
+    <script>
+        function myFunction() {
+            var myDropdown = document.getElementById("SettingsLinks");
+            if (myDropdown.classList.contains("SettingsAnimStart")) {
+                document.getElementById("SettingsLinks").classList.remove("SettingsAnimStart");
+                document.getElementById("SettingsLinks").classList.toggle("SettingsAnimEnd");
+                document.getElementById("SettingsText").classList.remove("SettingsLeftAnimEnd");
+                document.getElementById("SettingsText").classList.toggle("SettingsLeftAnimStart");
+                
+            }
+            else{
+                document.getElementById("SettingsLinks").classList.remove("SettingsAnimEnd");
+                document.getElementById("SettingsLinks").classList.toggle("SettingsAnimStart");
+                document.getElementById("SettingsText").classList.remove("SettingsLeftAnimStart");
+                document.getElementById("SettingsText").classList.toggle("SettingsLeftAnimEnd");
+            }
+        }
+        
+        // Close the dropdown if the user clicks outside of it
+        window.onclick = function(e) {
+        if (!e.target.matches('.settings, .SettingsText')) {
+            var myDropdown = document.getElementById("SettingsLinks");
+            if (myDropdown.classList.contains('SettingsAnimEnd')) {
+                myDropdown.classList.remove('SettingsAnimEnd');
+                myDropdown.classList.toggle('SettingsAnimStart');
+                document.getElementById("SettingsText").classList.remove("SettingsLeftAnimStart");
+                document.getElementById("SettingsText").classList.toggle("SettingsLeftAnimEnd");
+            }
+        }
+        }
+    </script>
+</body>
+</html>
